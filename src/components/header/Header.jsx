@@ -23,9 +23,9 @@ function Header() {
                     </div>
                     <div className="col-lg-4">
                         <div className="header__top__right">
-                            <a href="#"><FacebookIcon/></a>
-                            <a href="#"><TwitterIcon/></a>
-                            <a href="#"><InstagramIcon/></a>
+                            <a href="#"><FacebookIcon fontSize="small"/></a>
+                            <a href="#"><TwitterIcon fontSize="small"/></a>
+                            <a href="#"><InstagramIcon fontSize="small"/></a>
 
                         </div>
                     </div>
