@@ -1,9 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
 import './bootstrap.min.css';
-import Home from './home/Home';
+import Home from './pages/home/Home';
 import {Routes, Route} from 'react-router-dom'
-import Header from './header/Header';
+import Header from './components/header/Header';
 
 function App() {
   return (

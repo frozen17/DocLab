@@ -1,5 +1,13 @@
 import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import InstagramIcon from '@mui/icons-material/Instagram';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import QueryBuilderIcon from '@mui/icons-material/QueryBuilder';
+import MenuIcon from '@mui/icons-material/Menu';
+import curelineLogo from '../../curelineLogo.png'
+
 function Header() {
     return (
         <header className="header">
@@ -8,17 +16,16 @@ function Header() {
                 <div className="row">
                     <div className="col-lg-8">
                         <ul className="header__top__left">
-                            <li><i className="fa fa-phone"></i> 1-677-124-44227</li>
-                            <li><i className="fa fa-map-marker"></i> Los Angeles Gournadi, 1230 Bariasl</li>
-                            <li><i className="fa fa-clock-o"></i> Mon to Sat 9:00am to 18:00pm</li>
+                            <li><LocalPhoneIcon fontSize="small"/> 1-677-124-44227</li>
+                            <li><LocationOnIcon fontSize="small"/> Los Angeles Gournadi, 1230 Bariasl</li>
+                            <li><QueryBuilderIcon fontSize="small"/> Mon to Sat 9:00am to 18:00pm</li>
                         </ul>
                     </div>
                     <div className="col-lg-4">
                         <div className="header__top__right">
-                            <a href="#"><i className="fa fa-facebook"></i></a>
-                            <a href="#"><i className="fa fa-twitter"></i></a>
-                            <a href="#"><i className="fa fa-instagram"></i></a>
-                            <a href="#"><i className="fab fa-dribbble"></i></a>
+                            <a href="#"><FacebookIcon/></a>
+                            <a href="#"><TwitterIcon/></a>
+                            <a href="#"><InstagramIcon/></a>
 
                         </div>
                     </div>
@@ -29,7 +36,9 @@ function Header() {
             <div className="row">
                 <div className="col-lg-2">
                     <div className="header__logo">
-                        <a href="./index.html"><img src="img/logo.png" alt=""/></a>
+                        <a href="#"><img src={curelineLogo} style={{
+                            width: "100px"
+                        }} alt=""/></a>
                     </div>
                 </div>
                 <div className="col-lg-10">
@@ -57,7 +66,7 @@ function Header() {
                 </div>
             </div>
             <div className="canvas__open">
-                <i className="fa fa-bars"></i>
+                <MenuIcon fontSize='small'/>
             </div>
         </div>
     </header>
