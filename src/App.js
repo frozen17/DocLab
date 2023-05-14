@@ -42,8 +42,8 @@ function App() {
         <Route path='/' element={<Home/>}/>
       </Routes>
 
-      <div class="container-float">
-			<div class="wrapper-float" onClose={handleClose}>
+      <div className="container-float">
+			<div className="wrapper-float" onClose={handleClose}>
 				<button className={checkStatus()}>
 					<LocalPhoneIcon/>
 				</button>
