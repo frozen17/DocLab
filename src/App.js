@@ -43,16 +43,14 @@ function App() {
       </Routes>
 
       <div className="container-float">
-			<div className="wrapper-float" onClose={handleClose}>
-				<button className={checkStatus()}>
-					<LocalPhoneIcon/>
+			<div className="wrapper-float" onClose={handleClose} >
+        <button className={checkStatus()} style={{backgroundColor: "#27A7E7"}}>
+					<TelegramIcon sx={{color: "white", }}/>
 				</button>
-				<button className={checkStatus()}>
-					<WhatsAppIcon/>
+				<button className={checkStatus()} style={{backgroundColor: "#25D366"}}>
+					<WhatsAppIcon sx={{color: "white"}}/>
 				</button>
-				<button className={checkStatus()}>
-					<TelegramIcon/>
-				</button>
+
 				<button onClick={handleClick} className={status ? 'rotate' : 'normal'}>
 					{status ? <AddIcon sx={{color: "white"}}/> : <SmsIcon fontSize="medium" sx={{color: "white"}}/>}
 				</button>
