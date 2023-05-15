@@ -16,16 +16,16 @@ function Header() {
                 <div className="row">
                     <div className="col-lg-8">
                         <ul className="header__top__left">
-                            <li><LocalPhoneIcon fontSize="small"/> 1-677-124-44227</li>
-                            <li><LocationOnIcon fontSize="small"/> Los Angeles Gournadi, 1230 Bariasl</li>
-                            <li><QueryBuilderIcon fontSize="small"/> Mon to Sat 9:00am to 18:00pm</li>
+                            <li><LocalPhoneIcon fontSize="small"/><a style={{color: '#FFF'}} href="tel:+996707070707">+996707070707</a></li>
+                            <li><LocationOnIcon fontSize="small"/><a style={{color: '#FFF'}} href="https://goo.gl/maps/4SM7JrTKWnbfbRAe6" target="_blank">Бишкек, ул. Замирбекова 123</a> </li>
+                            <li><QueryBuilderIcon fontSize="small"/> Пн-Сб 9:00-18:00</li>
                         </ul>
                     </div>
                     <div className="col-lg-4">
                         <div className="header__top__right">
-                            <a href="#"><FacebookIcon fontSize="small"/></a>
-                            <a href="#"><TwitterIcon fontSize="small"/></a>
-                            <a href="#"><InstagramIcon fontSize="small"/></a>
+                            <a target="_blank" href="https://www.facebook.com/CurelineInc"><FacebookIcon fontSize="small"/></a>
+                            <a target="_blank" href="https://twitter.com/Cureline_Inc"><TwitterIcon fontSize="small"/></a>
+                            <a target="_blank" href="https://www.instagram.com/"><InstagramIcon fontSize="small"/></a>
 
                         </div>
                     </div>
