@@ -52,7 +52,7 @@ function App() {
 				</button>
 
 				<button onClick={handleClick} className={status ? 'rotate' : 'normal'}>
-					{status ? <AddIcon sx={{color: "white"}}/> : <SmsIcon fontSize="medium" sx={{color: "white"}}/>}
+					{status ? <AddIcon fontSize='large' sx={{color: "white"}}/> : <SmsIcon fontSize="medium" sx={{color: "white"}}/>}
 				</button>
 			</div>
 		</div>

@@ -26,8 +26,8 @@ function Header() {
                             <a target="_blank" href="https://www.facebook.com/CurelineInc"><FacebookIcon fontSize="small"/></a>
                             <a target="_blank" href="https://twitter.com/Cureline_Inc"><TwitterIcon fontSize="small"/></a>
                             <a target="_blank" href="https://www.instagram.com/"><InstagramIcon fontSize="small"/></a>
-
                         </div>
+                        
                     </div>
                 </div>
             </div>
