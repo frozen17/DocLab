@@ -27,7 +27,7 @@ function Home() {
               <div key={menu.id}>
                 {t("main")}
                 <h1>
-                  {localStorage.getItem('language') == '"en"' && menu.acf.menu_one}
+                  {localStorage.getItem('language') === '"en"' && menu.acf.menu_one}
                 </h1>
                 
               </div>

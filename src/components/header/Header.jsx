@@ -10,23 +10,12 @@ import MenuIcon from '@mui/icons-material/Menu';
 import curelineLogo from '../../curelineLogo.png'
 import useLocalStorage from '../../hooks/use-localstorage';
 import MenuItem from '@mui/material/MenuItem';
-import { useTranslation } from "react-i18next";
 import i18n from "../../i18n";
-import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
-import Button from '@mui/material/Button';
-import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
 import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 import Typography from '@mui/material/Typography';
@@ -38,7 +27,6 @@ function Header(props) {
     const [mobileOpen, setMobileOpen] = React.useState(false);
     const { window } = props;
 
-    const {t} = useTranslation()
     const [language, setLanguage] = useLocalStorage('language', 'ru')
 
 
@@ -132,7 +120,8 @@ asdasdasd
                     <a
                       style={{ color: "#FFF" }}
                       href="https://goo.gl/maps/4SM7JrTKWnbfbRAe6"
-                      target="_blank"
+                      target="blank"
+                      
                     >
                       Бишкек, ул. Замирбекова 123
                     </a>{" "}
@@ -145,15 +134,15 @@ asdasdasd
               <div>
                 <div className="header__top__right">
                   <a
-                    target="_blank"
+                    target="blank"
                     href="https://www.facebook.com/CurelineInc"
                   >
                     <FacebookIcon fontSize="small" />
                   </a>
-                  <a target="_blank" href="https://twitter.com/Cureline_Inc">
+                  <a target="blank" href="https://twitter.com/Cureline_Inc">
                     <TwitterIcon fontSize="small" />
                   </a>
-                  <a target="_blank" href="https://www.instagram.com/">
+                  <a target="blank" href="https://www.instagram.com/">
                     <InstagramIcon fontSize="small" />
                   </a>
                 </div>
@@ -185,7 +174,7 @@ asdasdasd
           <div className="row">
             <div className="col-lg-2">
               <div className="header__logo">
-                <a href="#">
+                <a href="/#">
                   <img
                     src={curelineLogo}
                     style={{
@@ -201,40 +190,40 @@ asdasdasd
                 <nav className="header__menu">
                   <ul>
                     <li className="active">
-                      <a href="./index.html">Home</a>
+                      <Link href="/#">Home</Link>
                     </li>
                     <li>
-                      <a href="./about.html">About</a>
+                      <Link href="/#">About</Link>
                     </li>
                     <li>
-                      <a href="./services.html">Services</a>
+                      <Link href="/#">Services</Link>
                     </li>
                     <li>
-                      <a href="#">Pages</a>
+                      <Link href="/#">Pages</Link>
                       <ul className="dropdown">
                         <li>
-                          <a href="./pricing.html">Pricing</a>
+                          <Link href="/#">Pricing</Link>
                         </li>
                         <li>
-                          <a href="./doctor.html">Doctor</a>
+                          <Link href="/#">Doctor</Link>
                         </li>
                         <li>
-                          <a href="./blog-details.html">Blog Details</a>
+                          <Link href="/#">Blog Details</Link>
                         </li>
                       </ul>
                     </li>
                     <li>
-                      <a href="./blog.html">News</a>
+                      <Link href="/#">News</Link>
                     </li>
                     <li>
-                      <a href="./contact.html">Contact</a>
+                      <Link href="/#">Contact</Link>
                     </li>
                   </ul>
                 </nav>
                 <div className="header__btn">
-                  <a href="#" className="primary-btn">
+                  <Link href="/#" className="primary-btn">
                     Appointment
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
