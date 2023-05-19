@@ -12,24 +12,102 @@ import useLocalStorage from '../../hooks/use-localstorage';
 import MenuItem from '@mui/material/MenuItem';
 import { useTranslation } from "react-i18next";
 import i18n from "../../i18n";
-
-
 import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
+import Box from '@mui/material/Box';
+import Drawer from '@mui/material/Drawer';
+import Button from '@mui/material/Button';
+import List from '@mui/material/List';
+import Divider from '@mui/material/Divider';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import InboxIcon from '@mui/icons-material/MoveToInbox';
+import MailIcon from '@mui/icons-material/Mail';
+import PropTypes from 'prop-types';
+import { Link } from "react-router-dom";
+import Typography from '@mui/material/Typography';
+import IconButton from '@mui/material/IconButton';
 
-function Header() {
+
+function Header(props) {
     const [age, setAge] = React.useState('');
+    const [mobileOpen, setMobileOpen] = React.useState(false);
+    const { window } = props;
 
     const {t} = useTranslation()
     const [language, setLanguage] = useLocalStorage('language', 'ru')
 
 
-    const handleChangeLanguage = (language, e) => {
-    i18n.changeLanguage(language)
+    const handleChangeLanguage = async(language, e) => {
+        await i18n.changeLanguage(language)
     }
+    const container = window !== undefined ? () => window().document.body : undefined;
 
+    const handleDrawerToggle = () => {
+      setMobileOpen((prevState) => !prevState);
+    };
+
+
+    const drawer = (
+      <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', width: "300px" }}>
+        <Typography variant="h6" sx={{ my: 2 }}>
+        <Link
+            to={"#"}
+            className="navbar-brand d-flex align-items-center justify-content-center"
+          >
+            <img className="img-fluid me-3" src={curelineLogo} alt=""  style={{width: "150px"}} />
+          </Link>
+        </Typography>
+        <Divider />
+        <Box sx={{
+          padding: "10px 25px"
+        }}>
+            
+              <div style={{display: "flex", flexDirection: "column", alignItems: "start"}}>
+                <Link  style={{color: "#111", margin: "8px 0"}} to={"#"} sx={{ color: '#fff' }}>
+
+              </Link>
+              <Link  style={{color: "#111", margin: "8px 0"}} to={"#"} sx={{ color: '#fff' }}>
+sadasdsadas
+              </Link>
+              <Link  style={{color: "#111", margin: "8px 0"}} to={"#"} sx={{ color: '#fff' }}>
+sadsadasd
+              </Link>
+              <Link  style={{color: "#111", margin: "8px 0"}} to={"#"} sx={{ color: '#fff' }}>
+sadsadasd
+              </Link>
+              <Link  style={{color: "#111", margin: "8px 0"}} to={"#"} sx={{ color: '#fff' }}>
+asdasdasd
+              </Link>
+
+                                                          <FormControl sx={{ m: 1, minWidth: 120, color: "white" }} size="small" variant="standard">
+                  <Select
+                    labelId="demo-select-small-label"
+                    id="demo-select-small"
+                    value={language}
+                    onChange={() => handleChange}
+                    sx={{color: "black", fontSize: "10px" ,'& .MuiInputBase-input': {
+                        borderBottom: '3px solid white',
+                        }}}
+                  >
+                    <MenuItem className='trans' onClick={() => handleChangeLanguage('en', setLanguage('en'))} value={'en'}><img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_the_United_Kingdom.svg/640px-Flag_of_the_United_Kingdom.svg.png" className="imgLng" alt=""/>English</MenuItem>
+                    <MenuItem className='trans' onClick={() => handleChangeLanguage('ru', setLanguage('ru'))} value={'ru'}><img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f3/Flag_of_Russia.svg/640px-Flag_of_Russia.svg.png"  className="imgLng" alt="" />Русский</MenuItem>
+                    <MenuItem className='trans' onClick={() => handleChangeLanguage('kgz', setLanguage('kgz'))} value={'kgz'}><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Flag_of_Kyrgyzstan.svg/1200px-Flag_of_Kyrgyzstan.svg.png" className="imgLng" alt="" /> Кыргызча</MenuItem>
+                  </Select>
+                </FormControl>
+              </div>
+
+
+
+        </Box>
+
+        
+      </Box>
+    );
 
     
 
@@ -89,19 +167,17 @@ function Header() {
                     id="demo-select-small"
                     value={language}
                     onChange={handleChange}
-                    sx={{color: "white", '& .MuiInputBase-input': {
+                    sx={{color: "white", fontSize: "10px" ,'& .MuiInputBase-input': {
                         borderBottom: '3px solid white',
                         }}}
                   >
-                    <MenuItem value="">
-                    </MenuItem>
-                    <MenuItem className='trans' onClick={() => handleChangeLanguage('en', setLanguage('en'))} value={'en'}><img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_the_United_Kingdom.svg/640px-Flag_of_the_United_Kingdom.svg.png" className="imgLng" alt=""/>en</MenuItem>
-                    <MenuItem className='trans' onClick={() => handleChangeLanguage('ru', setLanguage('ru'))} value={'ru'}><img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f3/Flag_of_Russia.svg/640px-Flag_of_Russia.svg.png"  className="imgLng" alt="" />ru</MenuItem>
-                    <MenuItem className='trans' onClick={() => handleChangeLanguage('kgz', setLanguage('kgz'))} value={'kgz'}><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Flag_of_Kyrgyzstan.svg/1200px-Flag_of_Kyrgyzstan.svg.png" className="imgLng" alt="" /> kgz</MenuItem>
+                    <MenuItem className='trans' onClick={() => handleChangeLanguage('en', setLanguage('en'))} value={'en'}><img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_the_United_Kingdom.svg/640px-Flag_of_the_United_Kingdom.svg.png" className="imgLng" alt=""/>English</MenuItem>
+                    <MenuItem className='trans' onClick={() => handleChangeLanguage('ru', setLanguage('ru'))} value={'ru'}><img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f3/Flag_of_Russia.svg/640px-Flag_of_Russia.svg.png"  className="imgLng" alt="" />Русский</MenuItem>
+                    <MenuItem className='trans' onClick={() => handleChangeLanguage('kgz', setLanguage('kgz'))} value={'kgz'}><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Flag_of_Kyrgyzstan.svg/1200px-Flag_of_Kyrgyzstan.svg.png" className="imgLng" alt="" /> Кыргызча</MenuItem>
                   </Select>
                 </FormControl>
+                
               </div>
-
             </div>
           </div>
         </div>
@@ -163,12 +239,48 @@ function Header() {
               </div>
             </div>
           </div>
-          <div className="canvas__open">
-            <MenuIcon fontSize="small" />
+          <div className="canvas__open" style={{
+            display:"flex",
+            justifyContent: "center",
+            alignItems: "center",
+            border: "none"
+          }}>
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="end"
+            onClick={handleDrawerToggle}
+            sx={{ mr: 1, ml:"auto", display: { md: 'none' }, float:"inline-end"}}
+          >
+            <MenuIcon />
+          </IconButton>
           </div>
         </div>
+
+        <Box component="nav">
+        <Drawer
+          container={container}
+          variant="temporary"
+          open={mobileOpen}
+          anchor="left"
+          onClose={handleDrawerToggle}
+          ModalProps={{
+            keepMounted: true
+          }}
+          sx={{
+            display: { sm: 'block', md: 'none', width: "300px" },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box' },
+          }}
+        >
+          {drawer}
+        </Drawer>
+      </Box>
       </header>
     );
 }
+
+Header.propTypes = {
+  window: PropTypes.func,
+};
 
 export default Header
