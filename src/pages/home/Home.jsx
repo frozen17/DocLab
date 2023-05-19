@@ -24,8 +24,12 @@ function Home() {
     return (
         <div>
             {menu?.map((menu) => (
-              <div>
+              <div key={menu.id}>
                 {t("main")}
+                <h1>
+                  {localStorage.getItem('language') == '"en"' && menu.acf.menu_one}
+                </h1>
+                
               </div>
             ))}
         </div>
