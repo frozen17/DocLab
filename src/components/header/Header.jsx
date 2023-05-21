@@ -257,7 +257,7 @@ asdasdasd
             keepMounted: true
           }}
           sx={{
-            display: { sm: 'block', md: 'none', width: "300px" },
+            display: { sm: 'block', md: 'none' },
             '& .MuiDrawer-paper': { boxSizing: 'border-box' },
           }}
         >
