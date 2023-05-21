@@ -15,6 +15,7 @@ import TelegramIcon from '@mui/icons-material/Telegram';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import AddIcon from '@mui/icons-material/Add';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
+import Footer from './components/footer/Footer';
 
 function App() {
 
@@ -56,6 +57,7 @@ function App() {
 				</button>
 			</div>
 		</div>
+    <Footer/>
     </div>
   );
 }

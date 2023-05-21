@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import constant from '../../utils/url.json'
 import axios from 'axios'
 import { useTranslation } from "react-i18next";
+import Team from '../team/Team';
 
 function Home() {
     const [menu, setMenu] = useState(null)
@@ -32,6 +33,7 @@ function Home() {
                 
               </div>
             ))}
+            <Team/>
         </div>
     )
 }

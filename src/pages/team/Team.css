@@ -1,0 +1,134 @@
+.spad {
+	padding-top: 100px;
+	padding-bottom: 100px;
+}
+/*---------------------
+  Team
+-----------------------*/
+
+.team {
+	padding-top: 120px;
+	padding-bottom: 90px;
+}
+
+.team__btn {
+	text-align: right;
+}
+
+.team__item {
+	height: 480px;
+	position: relative;
+	z-index: 1;
+	margin-bottom: 30px;
+}
+
+.team__item:after {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background: rgba(17, 17, 17, 0.9);
+	content: "";
+	z-index: -1;
+	opacity: 0;
+	-webkit-transition: all, 0.5s, ease-out, 0.5s;
+	-o-transition: all, 0.5s, ease-out, 0.5s;
+	transition: all, 0.5s, ease-out, 0.5s;
+}
+
+.team__item:hover:after {
+	opacity: 1;
+}
+
+.team__item:hover .team__text .team__title {
+	border-bottom: 1px solid rgba(183, 183, 183, 0.2);
+	padding: 0 0 32px;
+	margin-bottom: 34px;
+	opacity: 0;
+	visibility: hidden;
+	position: relative;
+	bottom: initial;
+	opacity: 1;
+	visibility: visible;
+}
+
+.team__item:hover .team__text p {
+	opacity: 1;
+	visibility: visible;
+}
+
+.team__item:hover .team__text .team__social {
+	opacity: 1;
+	visibility: visible;
+	bottom: 34px;
+}
+
+.team__text {
+	height: 100%;
+	position: relative;
+	padding: 35px 30px 40px;
+}
+
+.team__text .team__title {
+	position: absolute;
+	left: 0;
+	bottom: 42px;
+	width: 100%;
+	padding: 0 30px;
+	-webkit-transition: all, 0.7s, ease-out, 0.7s;
+	-o-transition: all, 0.7s, ease-out, 0.7s;
+	transition: all, 0.7s, ease-out, 0.7s;
+}
+
+.team__text .team__title h5 {
+	color: #ffffff;
+	font-weight: 600;
+	font-family: "Poppins", sans-serif;
+	margin-bottom: 6px;
+}
+
+.team__text .team__title span {
+	font-size: 14px;
+	color: #dfa667;
+}
+
+.team__text p {
+	color: #b7b7b7;
+	opacity: 0;
+	visibility: hidden;
+	-webkit-transition: all, 0.7s, ease-out, 0.7s;
+	-o-transition: all, 0.7s, ease-out, 0.7s;
+	transition: all, 0.7s, ease-out, 0.7s;
+}
+
+.team__text .team__social {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	padding: 0 30px;
+	opacity: 0;
+	visibility: hidden;
+	-webkit-transition: all, 0.7s, ease-out, 0.7s;
+	-o-transition: all, 0.7s, ease-out, 0.7s;
+	transition: all, 0.7s, ease-out, 0.7s;
+}
+
+.team__text .team__social a {
+	display: inline-block;
+	font-size: 20px;
+	color: #ffffff;
+	margin-right: 34px;
+	-webkit-transition: all, 0.3s;
+	-o-transition: all, 0.3s;
+	transition: all, 0.3s;
+}
+
+.team__text .team__social a:last-child {
+	margin-right: 0;
+}
+
+.team__text .team__social a:hover {
+	color: #dfa667;
+}
