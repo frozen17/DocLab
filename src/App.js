@@ -22,6 +22,15 @@ function App() {
 
 	
     const [status, setStatus] = useState(false)
+    const [loader, setLoader] = useState(true);
+    const spinner = document.getElementById('spinner');
+
+    if(spinner){
+      setTimeout(() => {
+        spinner.style.display="none";
+        setLoader(false)
+      }, 4000)
+    }
     
     
     function handleClick(){
@@ -37,7 +46,7 @@ function App() {
     };
 
   return (
-    <div className="App">
+      !loader &&     <div className="App">
       <Header/>
       <Routes>
         <Route path='/' element={<Home/>}/>
