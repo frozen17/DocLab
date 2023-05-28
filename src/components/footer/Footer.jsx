@@ -3,16 +3,12 @@ import './Footer.css';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
-import footer_bg from '../../footer-bg.jpg'
 
-import biobank from '../../biobank.png';
 import curelineLogo from '../../curelineLogo.png'
 
 const Footer = () => {
     return (
-        <footer className="footer set-bg" style={{
-            backgroundImage: footer_bg
-        }} data-setbg={footer_bg}>
+        <footer className="footer set-bg">
         <div className="container">
             <div className="row">
                 <div className="col-lg-3 col-md-6 col-sm-6">
