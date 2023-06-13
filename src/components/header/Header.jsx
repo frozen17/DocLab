@@ -268,13 +268,13 @@ function Header(props) {
             <div>
               <div className="header__top__right">
                 <a target="blank" href="https://www.facebook.com/CurelineInc">
-                  <FacebookIcon fontSize="small" />
+                  <FacebookIcon fontSize="large" />
                 </a>
                 <a target="blank" href="https://twitter.com/Cureline_Inc">
-                  <TwitterIcon fontSize="small" />
+                  <TwitterIcon fontSize="large" />
                 </a>
                 <a target="blank" href="https://www.instagram.com/">
-                  <InstagramIcon fontSize="small" />
+                  <InstagramIcon fontSize="large" />
                 </a>
               </div>
             </div>

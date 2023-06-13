@@ -8,14 +8,14 @@ import Home from './pages/home/Home';
 import {Routes, Route} from 'react-router-dom'
 import Header from './components/header/Header';
 
-import * as Icon from "https://cdn.skypack.dev/react-feather@2.0.9";
 
 import SmsIcon from '@mui/icons-material/Sms';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import AddIcon from '@mui/icons-material/Add';
-import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import Footer from './components/footer/Footer';
+import Team from './pages/team/Team';
+import Undefined from './components/undefined/Undefined';
 
 function App() {
 
@@ -29,7 +29,7 @@ function App() {
       setTimeout(() => {
         spinner.style.display="none";
         setLoader(false)
-      }, 4000)
+      }, 2000)
     }
     
     
@@ -42,7 +42,7 @@ function App() {
     }
 
     const handleClose = () => {
-      setStatus(prevStats=>prevStats);
+      setStatus((prevState) => !prevState);
     };
 
   return (
@@ -50,23 +50,26 @@ function App() {
       <Header/>
       <Routes>
         <Route path='/' element={<Home/>}/>
+        <Route path='/ourspecialists' element={<Team/>}/>
+        <Route path='*' element={<Undefined/>}/>
       </Routes>
 
-      <div className="container-float">
-			<div className="wrapper-float" onClose={handleClose} >
+      <div className="container-float"onClose={handleClose}>
+			<div className="wrapper-float"  >
         <button className={checkStatus()} style={{backgroundColor: "#27A7E7"}}>
-					<TelegramIcon sx={{color: "white", }}/>
+					<TelegramIcon sx={{color: "white", }} fontSize='large'/>
 				</button>
 				<button className={checkStatus()} style={{backgroundColor: "#25D366"}}>
-					<WhatsAppIcon sx={{color: "white"}}/>
+					<WhatsAppIcon sx={{color: "white"}} fontSize='large'/>
 				</button>
 
 				<button onClick={handleClick} className={status ? 'rotate' : 'normal'}>
-					{status ? <AddIcon fontSize='large' sx={{color: "white"}}/> : <SmsIcon fontSize="medium" sx={{color: "white"}}/>}
+					{status ? <AddIcon fontSize='large' sx={{color: "white"}}/> : <SmsIcon fontSize="large" sx={{color: "white"}}/>}
 				</button>
 			</div>
 		</div>
     <Footer/>
+    
     </div>
   );
 }

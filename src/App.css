@@ -1,14 +1,14 @@
 button{
 	cursor:pointer;
 	transform:scale(1.1);
-	width:60px;
-	height:60px;
+	width:55px !important;
+	height:55px !important;
 	transition:0.3s;
-	margin:7px 0 ;
-	border:1px solid #DDD;
+	border:1px solid transparent;
 	background-color: #13a2b7;
 	border-radius: 50%;
 	padding: 10px;
+	margin-bottom: 20px;
 }
 
 button:hover{
@@ -29,8 +29,8 @@ button:hover{
 
 	z-index:100;
 
-	bottom:115px;
-	right:25px;
+	bottom:90px;
+	right:27px;
 }
 
 .hidden{
