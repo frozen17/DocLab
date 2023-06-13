@@ -4,6 +4,8 @@
 
 .team {
 	padding-bottom: 70px;
+	background-image: url(https://www.cureline.com/media/capabilities/original/bg2.jpg);
+	background-size: 100%;
 }
 
 .team__item {

@@ -40,7 +40,7 @@ function Home() {
                 <div className="col-lg-6">
                     <div className="hero__text">
                         <span>Cureline Group</span>
-                        <h2>
+                        <h2 className='home_text'>  
                           {localStorage.getItem("language") == '"ru"' &&
                           mainpage.acf.ru_title}
                         {localStorage.getItem("language") == '"en"' &&

@@ -56,13 +56,16 @@ function App() {
 
       <div className="container-float"onClose={handleClose}>
 			<div className="wrapper-float"  >
+      <a href='https://web.telegram.org/' target='blank'>
         <button className={checkStatus()} style={{backgroundColor: "#27A7E7"}}>
 					<TelegramIcon sx={{color: "white", }} fontSize='large'/>
 				</button>
+        </a>	
+        <a href='https://www.whatsapp.com/' target='blank'>
 				<button className={checkStatus()} style={{backgroundColor: "#25D366"}}>
-					<WhatsAppIcon sx={{color: "white"}} fontSize='large'/>
+				  <WhatsAppIcon sx={{color: "white"}} fontSize='large'/>
 				</button>
-
+        </a>	
 				<button onClick={handleClick} className={status ? 'rotate' : 'normal'}>
 					{status ? <AddIcon fontSize='large' sx={{color: "white"}}/> : <SmsIcon fontSize="large" sx={{color: "white"}}/>}
 				</button>

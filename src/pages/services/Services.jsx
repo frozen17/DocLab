@@ -33,7 +33,7 @@ const Services = () => {
     <ul className="c-services">
         {services?.map((service) => (
         <li className="c-services__item" key={service.id}>
-            <h3 className='service-text' >
+            <h3 className='service-text' style={{fontSize: "25px"}}>
             {localStorage.getItem("language") == '"ru"' &&
                           service.acf.ru_title}
                         {localStorage.getItem("language") == '"en"' &&
@@ -41,7 +41,7 @@ const Services = () => {
                         {localStorage.getItem("language") == '"kgz"' &&
                           service.acf.kgz_title}
             </h3>
-            <p>
+            <p style={{fontSize: "15px"}}>
             {localStorage.getItem("language") == '"ru"' &&
                           service.acf.ru_descr}
                         {localStorage.getItem("language") == '"en"' &&
@@ -59,4 +59,4 @@ const Services = () => {
   )
 }
 
-export default Services
+export default Services;
