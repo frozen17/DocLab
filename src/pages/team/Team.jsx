@@ -1,84 +1,70 @@
-import React from 'react';
+import React, { useState, useEffect} from 'react';
 import './Team.css';
 
+import constant from '../../utils/url.json'
+import axios from 'axios'
+import InstagramIcon from "@mui/icons-material/Instagram";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import TwitterIcon from "@mui/icons-material/Twitter";
+
 const Team = () => {
+    const [ teams, setTeams] = useState(null)
+
+    const getData = async () => {
+        try{
+          await axios.get(`${constant.url}/team`).then(res => setTeams(res.data))
+        }
+           catch(error){
+          console.log(error)
+         }
+       }
+    
+       useEffect(() => {
+          getData();
+       }, [])
+
     return (
-<section className="team spad">
+        <section className="team spad">
         <div className="container">
             <div className="row">
-                <div className="col-lg-9 col-md-8 col-sm-6">
+                <div className="col-lg-12 text-center">
                     <div className="section-title">
                         <span>Our Team</span>
-                        <h2>Meet our team</h2>
-                    </div>
-                </div>
-                <div className="col-lg-3 col-md-4 col-sm-6">
-                    <div className="team__btn">
-                        <a href="#" className="primary-btn normal-btn">View All</a>
+                        <h2>Our Expert Doctors</h2>
                     </div>
                 </div>
             </div>
+            {console.log(teams)}
             <div className="row">
-                <div className="col-lg-4 col-md-6">
-                    <div className="team__item set-bg" data-setbg="img/team/team-1.jpg" style={{
-                        backgroundImage: "url(https://media.licdn.com/dms/image/C4D08AQH66cTOY6BGag/croft-frontend-shrinkToFit1024/0/1618355412320?e=2147483647&v=beta&t=kO-92wBMe1hK6g2k-VGDpVEMJAmFMYRJ-VEGHRu301A)"
-                    }}>
-                        <div className="team__text">
-                            <div className="team__title">
-                                <h5>Dolores Webster</h5>
-                                <span>CEO & Founder</span>
-                            </div>
-                            <p>Vestibulum dapibus odio quam, sit amet hendrerit dui ultricies consectetur. Ut viverra
-                                porta leo, non tincidunt mauris condimentum eget. Vivamus non turpis elit. Aenean
-                            ultricies nisl sit amet.</p>
-                            <div className="team__social">
-                                <a href="#"><i className="fa fa-facebook"></i></a>
-                                <a href="#"><i className="fa fa-twitter"></i></a>
-                                <a href="#"><i className="fa fa-instagram"></i></a>
-                            </div>
+                {teams?.map((team) => (
+                                  <div className="col-lg-4 col-md-6 col-sm-6" key={team.id}>
+                    <div className="team__item">
+                        <img src={team.acf.photo} alt=""/>
+                        <h5>
+                        {localStorage.getItem("language") == '"ru"' &&
+                          team.acf.ru_name_employee}
+                        {localStorage.getItem("language") == '"en"' &&
+                          team.acf.en_name_employee}
+                        {localStorage.getItem("language") == '"kgz"' &&
+                          team.acf.kgz_name_employee}
+                        </h5>
+                        <span>
+                        {localStorage.getItem("language") == '"ru"' &&
+                          team.acf.ru_position_employee}
+                        {localStorage.getItem("language") == '"en"' &&
+                          team.acf.en_position_employee}
+                        {localStorage.getItem("language") == '"kgz"' &&
+                          team.acf.kgz_position_employee}
+                        </span>
+                        <div className="team__item__social">
+                            <a href="#"><FacebookIcon fontSize="medium" /></a>
+                            <a href="#"><TwitterIcon fontSize="medium" /></a>
+                            <a href="#"><InstagramIcon fontSize="medium" /></a>
                         </div>
                     </div>
-                </div>
-                <div className="col-lg-4 col-md-6">
-                    <div className="team__item set-bg" data-setbg="img/team/team-2.jpg" style={{
-                        backgroundImage: "url(https://ca.res.keymedia.com/files/image/atgoogleasiangooglernetwork.jpg)"
-                    }}>
-                        <div className="team__text">
-                            <div className="team__title">
-                                <h5>Dana Vaughn</h5>
-                                <span>Architect</span>
-                            </div>
-                            <p>Vestibulum dapibus odio quam, sit amet hendrerit dui ultricies consectetur. Ut viverra
-                                porta leo, non tincidunt mauris condimentum eget. Vivamus non turpis elit. Aenean
-                            ultricies nisl sit amet.</p>
-                            <div className="team__social">
-                                <a href="#"><i className="fa fa-facebook"></i></a>
-                                <a href="#"><i className="fa fa-twitter"></i></a>
-                                <a href="#"><i className="fa fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-lg-4 col-md-6">
-                    <div className="team__item set-bg" data-setbg="https://i.insider.com/55311854eab8eaba4c8b4567?width=1000&format=jpeg&auto=webp" style={{
-                        backgroundImage: "url(https://i.insider.com/55311854eab8eaba4c8b4567?width=1000&format=jpeg&auto=webp)"
-                    }}>
-                        <div className="team__text">
-                            <div className="team__title">
-                                <h5>Jonathan Mcdaniel</h5>
-                                <span>Architect</span>
-                            </div>
-                            <p>Vestibulum dapibus odio quam, sit amet hendrerit dui ultricies consectetur. Ut viverra
-                                porta leo, non tincidunt mauris condimentum eget. Vivamus non turpis elit. Aenean
-                            ultricies nisl sit amet.</p>
-                            <div className="team__social">
-                                <a href="#"><i className="fa fa-facebook"></i></a>
-                                <a href="#"><i className="fa fa-twitter"></i></a>
-                                <a href="#"><i className="fa fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </div>  
+                ))}
+
             </div>
         </div>
     </section>

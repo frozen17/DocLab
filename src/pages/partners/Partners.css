@@ -1,0 +1,25 @@
+#logo-grid {
+    align-content: space-around;
+    align-items: flex-start;
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin: 100px auto;
+    max-width: 750px;
+  }
+  .partner-logo {
+    box-sizing: border-box;
+    margin: 25px;
+  }
+  .partner-logo img {
+    display: block;
+    max-width: 100px;
+    width: 100%;
+  }
+  .partner-logo img:hover {
+    background-color: #eeeeee;
+  }
+  .col-2 img {
+    max-width: 275px;
+  }
