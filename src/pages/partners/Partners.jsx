@@ -73,9 +73,7 @@ const Partners = () => {
                 followCursor
               >
                 <div className="partner-logo">
-                  
-                    <img src={partner.acf.partner_one} alt="" />
-                  
+                  <img src={partner.acf.partner_one} alt="" />
                 </div>
               </Tooltip>
               <Tooltip
@@ -95,11 +93,9 @@ const Partners = () => {
                 sx={{ fontSize: "50px" }}
                 followCursor
               >
-              <div className="partner-logo">
-                
+                <div className="partner-logo">
                   <img src={partner.acf.partner_two} alt="" />
-                
-              </div>
+                </div>
               </Tooltip>
               <Tooltip
                 title={
@@ -118,11 +114,9 @@ const Partners = () => {
                 sx={{ fontSize: "50px" }}
                 followCursor
               >
-              <div className="partner-logo">
-                
+                <div className="partner-logo">
                   <img src={partner.acf.partner_three} alt="" />
-                
-              </div>
+                </div>
               </Tooltip>
               <Tooltip
                 title={
@@ -141,11 +135,9 @@ const Partners = () => {
                 sx={{ fontSize: "50px" }}
                 followCursor
               >
-              <div className="partner-logo">
-                
+                <div className="partner-logo">
                   <img src={partner.acf.partner_four} alt="" />
-                
-              </div>
+                </div>
               </Tooltip>
               <Tooltip
                 title={
@@ -164,13 +156,10 @@ const Partners = () => {
                 sx={{ fontSize: "50px" }}
                 followCursor
               >
-              <div className="partner-logo">
-                
+                <div className="partner-logo">
                   <img src={partner.acf.partner_five} alt="" />
-                
-              </div>
+                </div>
               </Tooltip>
-      
 
               <Tooltip
                 title={
@@ -189,13 +178,9 @@ const Partners = () => {
                 sx={{ fontSize: "50px" }}
                 followCursor
               >
-
-
-              <div className="partner-logo">
-                
+                <div className="partner-logo">
                   <img src={partner.acf.partner_six} alt="" />
-                
-              </div>
+                </div>
               </Tooltip>
               <Tooltip
                 title={
@@ -214,11 +199,9 @@ const Partners = () => {
                 sx={{ fontSize: "50px" }}
                 followCursor
               >
-              <div className="partner-logo">
-                
+                <div className="partner-logo">
                   <img src={partner.acf.partner_seven} alt="" />
-                
-              </div>
+                </div>
               </Tooltip>
 
               <Tooltip
@@ -238,11 +221,9 @@ const Partners = () => {
                 sx={{ fontSize: "50px" }}
                 followCursor
               >
-              <div className="partner-logo">
-                
+                <div className="partner-logo">
                   <img src={partner.acf.partner_eight} alt="" />
-                
-              </div>
+                </div>
               </Tooltip>
 
               <Tooltip
@@ -262,11 +243,9 @@ const Partners = () => {
                 sx={{ fontSize: "50px" }}
                 followCursor
               >
-              <div className="partner-logo">
-                
+                <div className="partner-logo">
                   <img src={partner.acf.partner_nine} alt="" />
-               
-              </div>
+                </div>
               </Tooltip>
 
               <Tooltip
@@ -286,11 +265,9 @@ const Partners = () => {
                 sx={{ fontSize: "50px" }}
                 followCursor
               >
-              <div className="partner-logo">
-                
+                <div className="partner-logo">
                   <img src={partner.acf.partner_ten} alt="" />
-                
-              </div>
+                </div>
               </Tooltip>
               <Tooltip
                 title={
@@ -309,11 +286,9 @@ const Partners = () => {
                 sx={{ fontSize: "50px" }}
                 followCursor
               >
-              <div className="partner-logo">
-               
+                <div className="partner-logo">
                   <img src={partner.acf.partner_eleven} alt="" />
-                
-              </div>
+                </div>
               </Tooltip>
 
               <Tooltip
@@ -333,11 +308,9 @@ const Partners = () => {
                 sx={{ fontSize: "50px" }}
                 followCursor
               >
-              <div className="partner-logo">
-                
+                <div className="partner-logo">
                   <img src={partner.acf.partner_twelve} alt="" />
-                
-              </div>
+                </div>
               </Tooltip>
               <Tooltip
                 title={
@@ -356,11 +329,9 @@ const Partners = () => {
                 sx={{ fontSize: "50px" }}
                 followCursor
               >
-              <div className="partner-logo">
-               
+                <div className="partner-logo">
                   <img src={partner.acf.partner_thirteen} alt="" />
-                
-              </div>
+                </div>
               </Tooltip>
 
               <Tooltip
@@ -380,11 +351,9 @@ const Partners = () => {
                 sx={{ fontSize: "50px" }}
                 followCursor
               >
-              <div className="partner-logo">
-                
+                <div className="partner-logo">
                   <img src={partner.acf.partner_fourteen} alt="" />
-                
-              </div>
+                </div>
               </Tooltip>
               <Tooltip
                 title={
@@ -403,10 +372,9 @@ const Partners = () => {
                 sx={{ fontSize: "50px" }}
                 followCursor
               >
-              <div className="partner-logo">
-                
+                <div className="partner-logo">
                   <img src={partner.acf.partner_fifteen} alt="" />
-              </div>
+                </div>
               </Tooltip>
               <Tooltip
                 title={
@@ -425,14 +393,12 @@ const Partners = () => {
                 sx={{ fontSize: "50px" }}
                 followCursor
               >
-              <div className="partner-logo">
-                
+                <div className="partner-logo">
                   <img src={partner.acf.partner_sixteen} alt="" />
-              
-              </div>
+                </div>
               </Tooltip>
 
-               <Tooltip
+              <Tooltip
                 title={
                   <React.Fragment>
                     <Typography color="inherit">
@@ -449,11 +415,9 @@ const Partners = () => {
                 sx={{ fontSize: "50px" }}
                 followCursor
               >
-              <div className="partner-logo">
-                
+                <div className="partner-logo">
                   <img src={partner.acf.partner_seventeen} alt="" />
-                
-              </div>
+                </div>
               </Tooltip>
 
               <Tooltip
@@ -473,11 +437,9 @@ const Partners = () => {
                 sx={{ fontSize: "50px" }}
                 followCursor
               >
-              <div className="partner-logo">
-                
+                <div className="partner-logo">
                   <img src={partner.acf.partner_eighteen} alt="" />
-                
-              </div>
+                </div>
               </Tooltip>
 
               <Tooltip
@@ -497,11 +459,9 @@ const Partners = () => {
                 sx={{ fontSize: "50px" }}
                 followCursor
               >
-              <div className="partner-logo">
-                
+                <div className="partner-logo">
                   <img src={partner.acf.partner_nineteen} alt="" />
-                
-              </div>
+                </div>
               </Tooltip>
               <Tooltip
                 title={
@@ -520,11 +480,9 @@ const Partners = () => {
                 sx={{ fontSize: "50px" }}
                 followCursor
               >
-              <div className="partner-logo">
-                
+                <div className="partner-logo">
                   <img src={partner.acf.partner_twenty} alt="" />
-               
-              </div>
+                </div>
               </Tooltip>
               <Tooltip
                 title={
@@ -543,11 +501,9 @@ const Partners = () => {
                 sx={{ fontSize: "50px" }}
                 followCursor
               >
-              <div className="partner-logo">
-                
+                <div className="partner-logo">
                   <img src={partner.acf.partner_twenty_one} alt="" />
-                
-              </div>
+                </div>
               </Tooltip>
             </div>
           </div>
