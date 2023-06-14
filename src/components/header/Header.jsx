@@ -56,7 +56,7 @@ function Header(props) {
   const drawer = (
     <Box
       onClick={handleDrawerToggle}
-      sx={{ textAlign: "center", width: "300px" }}
+      sx={{ textAlign: "center", width: "300px"}}
     >
       <Typography variant="h6" sx={{ my: 2 }}>
         <Link
@@ -238,7 +238,13 @@ function Header(props) {
     setAge(event.target.value);
   };
   return (
-    <header className="header">
+    <header className="header" style={{
+      width: "100%",
+      position: "sticky",
+      top: "0",
+      zIndex: "999",
+      backgroundColor: "#FFF"
+    }}>
       <div className="header__top">
         <div className="container">
           <div className="row top-nav-head">
@@ -345,7 +351,10 @@ function Header(props) {
           </div>
         </div>
       </div>
-      <div className="container">
+      <div className="container" style={{
+        backgroundColor: "#FFF"
+        // width: "100%"
+      }}>
         <div className="row">
           <div className="col-lg-2">
             <div className="header__logo">
@@ -353,7 +362,7 @@ function Header(props) {
                 <img
                   src={curelineLogo}
                   style={{
-                    width: "100px",
+                    width: "100px"
                   }}
                   alt=""
                 />
