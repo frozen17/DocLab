@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import Team from '../team/Team';
 import Partners from '../partners/Partners';
 import Services from '../services/Services';
+import Feedback from '../feedback/Feedback';
 // import bgImg from '../../images/banner.jpg'
 
 function Home() {
@@ -60,6 +61,7 @@ function Home() {
             <Services/>
             <Team/>
             <Partners/>
+            <Feedback/>
         </div>
     )
 }
