@@ -9,16 +9,16 @@ const Feedback = () => {
     <Container sx={{ pb: 10, margin: "0 auto"}}>
       <Grid container spacing={4}>
         <Grid item xs={12} sm={12} md={6}>
-          <div class="popup">
-            <form class="form">
-              <div class="note">
-                <label class="title">НАШИ КОНТАКТЫ</label>
-                <label class="title"><span>Свяжись</span> уже сегодня</label>
+          <div className="popup">
+            <form className="form">
+              <div className="note">
+                <label className="title">НАШИ КОНТАКТЫ</label>
+                <label className="title"><span>Свяжись</span> уже сегодня</label>
               </div>
               <input
                 type="text"
                 placeholder="Ваше имя"
-                class="input_field"
+                className="input_field"
                 required
               />
               <input
@@ -26,7 +26,7 @@ const Feedback = () => {
                 title="Ваш e-mail"
                 name="email"
                 type="email"
-                class="input_field"
+                className="input_field"
                 required
               />
               <input
@@ -34,14 +34,14 @@ const Feedback = () => {
                 title="Ваш вопрос"
                 name="email"
                 type="email"
-                class="input_field"
+                className="input_field"
                 required
               />
               <button
                 style={{
                   margin: "0 auto",
                 }}
-                class="submit"
+                className="submit"
               >
                 Submit
               </button>
@@ -49,15 +49,15 @@ const Feedback = () => {
           </div>
         </Grid>
         <Grid item xs={12} sm={12} md={6}>
-          <div class="popup">
-            <form class="form">
-              <div class="note">
-                <label class="title">СВЯЗАТЬСЯ С НАМИ</label>
+          <div className="popup">
+            <form className="form">
+              <div className="note">
+                <label className="title">СВЯЗАТЬСЯ С НАМИ</label>
               </div>
               <input
                 type="text"
                 placeholder="Ваше имя*"
-                class="input_field"
+                className="input_field"
                 required
               />
               <input
@@ -65,7 +65,7 @@ const Feedback = () => {
                 title="e-mail"
                 name="email"
                 type="email"
-                class="input_field"
+                className="input_field"
                 required
               />
               <input
@@ -73,14 +73,14 @@ const Feedback = () => {
                 title="вопрос"
                 name="email"
                 type="text"
-                class="input_field"
+                className="input_field"
                 required
               />
               <button
                 style={{
                   margin: "0 auto",
                 }}
-                class="submit"
+                className="submit"
               >
                 Submit
               </button>

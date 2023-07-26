@@ -237,14 +237,10 @@ function Header(props) {
   const handleChange = (event) => {
     setAge(event.target.value);
   };
+
+  
   return (
-    <header className="header" style={{
-      width: "100%",
-      position: "sticky",
-      top: "0",
-      zIndex: "999",
-      backgroundColor: "#FFF"
-    }}>
+    <header className="header" >
       <div className="header__top">
         <div className="container">
           <div className="row top-nav-head">
@@ -375,7 +371,7 @@ function Header(props) {
                 {menus?.map((menu) => (
                   <ul key={menu.id}>
                     <li className="active">
-                      <Link to={menu.acf.menu_one_url}>
+                      <Link className="links" to={menu.acf.menu_one_url}>
                         {localStorage.getItem("language") == '"ru"' &&
                           menu.acf.menu_one_ru}
                         {localStorage.getItem("language") == '"en"' &&
@@ -385,7 +381,7 @@ function Header(props) {
                       </Link>
                     </li>
                     <li>
-                      <Link to={menu.acf.menu_two_url}>
+                      <Link className="links" to={menu.acf.menu_two_url}>
                         {localStorage.getItem("language") == '"ru"' &&
                           menu.acf.menu_two_ru}
                         {localStorage.getItem("language") == '"en"' &&
@@ -397,7 +393,7 @@ function Header(props) {
                       {/* dropdown menu */}
                       <ul className="dropdown">
                         <li>
-                          <Link to={menu.acf.menu_two_drop_one_url}>
+                          <Link className="links" to={menu.acf.menu_two_drop_one_url}>
                             {localStorage.getItem("language") == '"ru"' &&
                               menu.acf.menu_two_drop_one_ru}
                             {localStorage.getItem("language") == '"en"' &&
@@ -407,7 +403,7 @@ function Header(props) {
                           </Link>
                         </li>
                         <li>
-                          <Link to={menu.acf.menu_two_drop_two_url}>
+                          <Link className="links" to={menu.acf.menu_two_drop_two_url}>
                             {localStorage.getItem("language") == '"ru"' &&
                               menu.acf.menu_two_drop_two_ru}
                             {localStorage.getItem("language") == '"en"' &&
@@ -417,7 +413,7 @@ function Header(props) {
                           </Link>
                         </li>
                         <li>
-                          <Link to={menu.acf.menu_two_drop_three_url}>
+                          <Link className="links" to={menu.acf.menu_two_drop_three_url}>
                             {localStorage.getItem("language") == '"ru"' &&
                               menu.acf.menu_two_drop_three_ru}
                             {localStorage.getItem("language") == '"en"' &&
@@ -429,7 +425,7 @@ function Header(props) {
                       </ul>
                     </li>
                     <li>
-                      <Link to={menu.acf.menu_three_url}>
+                      <Link className="links" to={menu.acf.menu_three_url}>
                         {localStorage.getItem("language") == '"ru"' &&
                           menu.acf.menu_three_ru}
                         {localStorage.getItem("language") == '"en"' &&
@@ -440,7 +436,7 @@ function Header(props) {
                     </li>
 
                     <li>
-                      <Link to={menu.acf.menu_four_url}>
+                      <Link className="links" to={menu.acf.menu_four_url}>
                         {localStorage.getItem("language") == '"ru"' &&
                           menu.acf.menu_four_ru}
                         {localStorage.getItem("language") == '"en"' &&

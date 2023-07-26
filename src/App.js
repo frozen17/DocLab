@@ -16,6 +16,7 @@ import AddIcon from '@mui/icons-material/Add';
 import Footer from './components/footer/Footer';
 import Team from './pages/team/Team';
 import Undefined from './components/undefined/Undefined';
+import Topbar from './components/topbar/Topbar';
 
 function App() {
 
@@ -29,7 +30,7 @@ function App() {
       setTimeout(() => {
         spinner.style.display="none";
         setLoader(false)
-      }, 2000)
+      }, 1000)
     }
     
     
@@ -47,7 +48,8 @@ function App() {
 
   return (
       !loader &&     <div className="App">
-      <Header/>
+        <Topbar/>
+      {/* <Header/> */}
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/ourspecialists' element={<Team/>}/>
@@ -57,14 +59,14 @@ function App() {
       <div className="container-float"onClose={handleClose}>
 			<div className="wrapper-float"  >
         <button className={checkStatus()} style={{backgroundColor: "#27A7E7"}}>
-					<TelegramIcon sx={{color: "white", }} fontSize='large'/>
+					<TelegramIcon sx={{color: "white", }} fontSize="small"/>
 				</button>
 				<button className={checkStatus()} style={{backgroundColor: "#25D366"}}>
-					<WhatsAppIcon sx={{color: "white"}} fontSize='large'/>
+					<WhatsAppIcon sx={{color: "white"}} fontSize="small"/>
 				</button>
 
 				<button onClick={handleClick} className={status ? 'rotate' : 'normal'}>
-					{status ? <AddIcon fontSize='large' sx={{color: "white"}}/> : <SmsIcon fontSize="large" sx={{color: "white"}}/>}
+					{status ? <AddIcon fontSize='large' sx={{color: "white"}}/> : <SmsIcon fontSize="small" sx={{color: "white"}}/>}
 				</button>
 			</div>
 		</div>
