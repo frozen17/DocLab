@@ -1,10 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Services.css';
 import constant from '../../utils/url.json'
 import axios from 'axios'
+import Grid from "@mui/material/Grid";
+import Container from "@mui/material/Container";
 import { useTranslation } from "react-i18next";
+import Button from '@mui/material/Button';
+
+import {icons} from '../../images/free-icon-medical-10191999.png'
 
 const Services = () => {
+  const cardsRef = useRef(null);
+
     const [services, setServices] = useState(null)
     const {t} = useTranslation()
 
@@ -20,41 +27,72 @@ const Services = () => {
        useEffect(() => {
           getData();
        }, [])
-  return (
-<section className="c-section">
-    <h2 className="c-section__title" style={{
-        color: "black",
-        fontSize: "40px",
-        textAlign: "center"
-    }}>{t("service")}</h2>
-    <div style={{width: "100px", backgroundColor: "red", margin: "0 auto"}}>
 
-    </div>
-    <ul className="c-services">
+
+       useEffect(() => {
+        const handleMouseMove = (e) => {
+          const cards = document.getElementById('cards-services');
+          const cardList = cards.getElementsByClassName('card-services');
+          for (const card of cardList) {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+    
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
+          }
+        };
+        const cardsElement = cardsRef.current;
+
+        cardsElement.addEventListener('mousemove', handleMouseMove);
+    
+        return () => {
+          cardsElement.removeEventListener('mousemove', handleMouseMove);
+        };
+      }, []);
+  return (
+    <section className='cards-background' id='card-services' ref={cardsRef}>
+      {console.log(services)}
+      <div id="cards-services">
         {services?.map((service) => (
-        <li className="c-services__item" key={service.id}>
-            <h3 className='service-text' >
-            {localStorage.getItem("language") == '"ru"' &&
+            <div className="card-services" key={service.id}>
+              <div className="card-content-services">
+                <div className="card-image-services" style={{display: "flex", justifyContent: "space-between", alignItems: "start"}}>
+                  <div>
+                      01
+                  </div>
+                <img style={{width: "30px", color: "white", position: "center", backgroundSize: "center"}} src="https://img.icons8.com/?size=512&id=6587&format=png" alt="" />
+                </div>
+                <div className="card-info-wrapper-services">
+                  <div className="card-info-services">
+                    <i className="fa-duotone fa-apartment-services"></i>
+                    <div className="card-info-title-services">
+                      <h3>
+                      {localStorage.getItem("language") == '"ru"' &&
                           service.acf.ru_title}
                         {localStorage.getItem("language") == '"en"' &&
                           service.acf.en_title}
                         {localStorage.getItem("language") == '"kgz"' &&
                           service.acf.kgz_title}
-            </h3>
-            <p>
-            {localStorage.getItem("language") == '"ru"' &&
-                          service.acf.ru_descr}
+                        </h3>  
+                      <h4 className='card-descr-services'>
+                      {localStorage.getItem("language") == '"ru"' &&
+                          service.acf.ru_title}
                         {localStorage.getItem("language") == '"en"' &&
-                          service.acf.en_descr}
+                          service.acf.en_title}
                         {localStorage.getItem("language") == '"kgz"' &&
-                          service.acf.kgz_descr}
-            </p>
-        </li>    
+                          service.acf.kgz_title}
+                      </h4>
+                    </div>    
+                   
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
         ))}
-
-        
-       
-    </ul>
+  
+</div>
     </section>
   )
 }

@@ -1,3 +1,12 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+		scroll-behavior: smooth;
+		-webkit-overflow-scrolling: smooth;
+}
+
+
 button{
 	cursor:pointer;
 	transform:scale(1.1);
