@@ -17,6 +17,7 @@ import Footer from './components/footer/Footer';
 import Team from './pages/team/Team';
 import Undefined from './components/undefined/Undefined';
 import Topbar from './components/topbar/Topbar';
+import Auth from './pages/auth/Auth';
 
 function App() {
 
@@ -24,13 +25,14 @@ function App() {
 	
     const [status, setStatus] = useState(false)
     const [loader, setLoader] = useState(true);
+    const [stylebtn, setStylebtn] = useState("btn-app")
     const spinner = document.getElementById('spinner');
 
     if(spinner){
       setTimeout(() => {
         spinner.style.display="none";
         setLoader(false)
-      }, 1000)
+      }, 3000)
     }
     
     
@@ -54,6 +56,7 @@ function App() {
         <Route path='/' element={<Home/>}/>
         <Route path='/ourspecialists' element={<Team/>}/>
         <Route path='*' element={<Undefined/>}/>
+        <Route path='/auth' element={<Auth/>}/>
       </Routes>
 
       <div className="container-float"onClose={handleClose}>

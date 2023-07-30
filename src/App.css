@@ -7,7 +7,7 @@
 }
 
 
-button{
+.appear {
 	cursor:pointer;
 	transform:scale(1.1);
 	width:55px !important;
@@ -20,7 +20,45 @@ button{
 	margin-bottom: 20px;
 }
 
-button:hover{
+.normal  {
+	cursor:pointer;
+	transform:scale(1.1);
+	width:55px !important;
+	height:55px !important;
+	transition:0.3s;
+	border:1px solid transparent;
+	background-color: #13a2b7;
+	border-radius: 50%;
+	padding: 10px;
+	margin-bottom: 20px;
+}
+.rotate{
+	cursor:pointer;
+	transform:scale(1.1);
+	width:55px !important;
+	height:55px !important;
+	transition:0.3s;
+	border:1px solid transparent;
+	background-color: #13a2b7;
+	border-radius: 50%;
+	padding: 10px;
+	margin-bottom: 20px;
+}
+
+.hidden{
+	cursor:pointer;
+	transform:scale(1.1);
+	width:55px !important;
+	height:55px !important;
+	transition:0.3s;
+	border:1px solid transparent;
+	background-color: #13a2b7;
+	border-radius: 50%;
+	padding: 10px;
+	margin-bottom: 20px;
+}
+
+.appear:hover{
 	opacity:0.8;
 }
 

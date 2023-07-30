@@ -22,23 +22,16 @@ const Partners = () => {
   return (
     <div>
       {console.log(partners)}
-        <div className="logo-slider">
-        <div className="logo-slide-track" >
-    {partners?.map((partner) => (
-
-
-      		<div className="slide" key={partner.id}>
-			        <img src={partner.acf.partner_logo} alt="" />
-		      </div>
-         
-
-
-
-    ))}
-
-		  </div>
-	</div>
-</div>
+      <div className="logo-slider">
+        <div className="logo-slide-track">
+          {partners?.map((partner) => (
+            <div className="slide" key={partner.id}>
+              <img src={partner.acf.partner_logo} alt="" />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 };
 
