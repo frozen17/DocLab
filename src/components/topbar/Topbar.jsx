@@ -23,6 +23,9 @@ import CallIcon from "@mui/icons-material/Call";
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import newlogo from '../../images/newlogo.svg';
 
+import CallOutlinedIcon from '@mui/icons-material/CallOutlined';
+import AdminPanelSettingsOutlinedIcon from '@mui/icons-material/AdminPanelSettingsOutlined';
+
 import PersonIcon from '@mui/icons-material/Person';
 const Topbar = (props) => {
   const [age, setAge] = React.useState("");
@@ -77,103 +80,71 @@ const Topbar = (props) => {
         sx={{
           padding: "10px 25px",
           textAlign: "start",
+          display: "flex",
+          flexDirection: "column-reverse",
+          listStyleType: "none"
         }}
       >
         {menus?.map((menu) => (
           <div
             key={menu.id}
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "start",
-            }}
           >
-            <Link
-              to={menu.acf.menu_one_url}
-              style={{ color: "#111", margin: "8px 0" }}
-              sx={{ color: "#fff" }}
-            >
-              {localStorage.getItem("language") == '"ru"' &&
-                menu.acf.menu_one_ru}
-              {localStorage.getItem("language") == '"en"' &&
-                menu.acf.menu_one_en}
-              {localStorage.getItem("language") == '"kgz"' &&
-                menu.acf.menu_one_kgz}
-            </Link>
+            <li>
+                          {" "}
+                          <Link style={{display: "flex", alignItems: "center", }} className="links" to={menu.acf.menu_url}>
+                          {localStorage.getItem("language") == '"ru"' &&
+                              menu.acf.menu_ru}
+                            {localStorage.getItem("language") == '"en"' &&
+                              menu.acf.menu_en}
+                            {localStorage.getItem("language") == '"kgz"' &&
+                              menu.acf.menu_kgz}
+                          </Link>
+                          {menu.acf.menu_drop_ru && (
+                                             <ul className="submenu" style={{padding: "10px 20px", listStyleType: "none"}}>
+                            <li>
+                              <Link
+                              style={{padding: "40px 0"}}
+                                className="links"
+                                to={menu.acf.menu_drop_url}
+                              >
+                                {localStorage.getItem("language") == '"ru"' &&
+                                  menu.acf.menu_drop_ru}
+                                {localStorage.getItem("language") == '"en"' &&
+                                  menu.acf.menu_drop_en}
+                                {localStorage.getItem("language") == '"kgz"' &&
+                                  menu.acf.menu_drop_kgz}
+                              </Link>
+                            </li>
+                            <li>
+                              <Link
+                                className="links"
+                                to={menu.acf.menu_two_drop_two_url}
+                              >
+                                {localStorage.getItem("language") == '"ru"' &&
+                                  menu.acf.menu_two_drop_two_ru}
+                                {localStorage.getItem("language") == '"en"' &&
+                                  menu.acf.menu_two_drop_two_en}
+                                {localStorage.getItem("language") == '"kgz"' &&
+                                  menu.acf.menu_two_drop_two_kgz}
+                              </Link>
+                            </li>
+                            <li>
+                              <Link
+                                className="links"
+                                to={menu.acf.menu_two_drop_three_url}
+                              >
+                                {localStorage.getItem("language") == '"ru"' &&
+                                  menu.acf.menu_two_drop_three_ru}
+                                {localStorage.getItem("language") == '"en"' &&
+                                  menu.acf.menu_two_drop_three_en}
+                                {localStorage.getItem("language") == '"kgz"' &&
+                                  menu.acf.menu_two_drop_three_kgz}
+                              </Link>
+                            </li>
+                          </ul>         
+                          )}
 
-            <Link
-              to={menu.acf.menu_two_url}
-              style={{ color: "#111", margin: "8px 0" }}
-              sx={{ color: "#fff" }}
-            >
-              {localStorage.getItem("language") == '"ru"' &&
-                menu.acf.menu_two_ru}
-              {localStorage.getItem("language") == '"en"' &&
-                menu.acf.menu_two_en}
-              {localStorage.getItem("language") == '"kgz"' &&
-                menu.acf.menu_two_kgz}
-            </Link><ArrowDropDownIcon/>
-
-            <Link
-              to={menu.acf.menu_two_drop_one_url}
-              style={{ color: "#111", margin: "8px 0" }}
-              sx={{ color: "#fff" }}
-            >
-              {localStorage.getItem("language") == '"ru"' &&
-                menu.acf.menu_two_drop_one_ru}
-              {localStorage.getItem("language") == '"en"' &&
-                menu.acf.menu_two_drop_one_en}
-              {localStorage.getItem("language") == '"kgz"' &&
-                menu.acf.menu_two_drop_one_kgz}
-            </Link>
-            <Link
-              to={menu.acf.menu_two_drop_two_url}
-              style={{ color: "#111", margin: "8px 0" }}
-              sx={{ color: "#fff" }}
-            >
-              {localStorage.getItem("language") == '"ru"' &&
-                menu.acf.menu_two_drop_two_ru}
-              {localStorage.getItem("language") == '"en"' &&
-                menu.acf.menu_two_drop_two_en}
-              {localStorage.getItem("language") == '"kgz"' &&
-                menu.acf.menu_two_drop_two_kgz}
-            </Link>
-            <Link
-              to={menu.acf.menu_two_drop_three_url}
-              style={{ color: "#111", margin: "8px 0" }}
-              sx={{ color: "#fff" }}
-            >
-              {localStorage.getItem("language") == '"ru"' &&
-                menu.acf.menu_two_drop_three_ru}
-              {localStorage.getItem("language") == '"en"' &&
-                menu.acf.menu_two_drop_three_en}
-              {localStorage.getItem("language") == '"kgz"' &&
-                menu.acf.menu_two_drop_three_kgz}
-            </Link>
-            <Link
-              to={menu.acf.menu_three_url}
-              style={{ color: "#111", margin: "8px 0" }}
-              sx={{ color: "#fff" }}
-            >
-              {localStorage.getItem("language") == '"ru"' &&
-                menu.acf.menu_three_ru}
-              {localStorage.getItem("language") == '"en"' &&
-                menu.acf.menu_three_en}
-              {localStorage.getItem("language") == '"kgz"' &&
-                menu.acf.menu_three_kgz}
-            </Link>
-            <Link
-              to={menu.acf.menu_four_url}
-              style={{ color: "#111", margin: "8px 0" }}
-              sx={{ color: "#fff" }}
-            >
-              {localStorage.getItem("language") == '"ru"' &&
-                menu.acf.menu_four_ru}
-              {localStorage.getItem("language") == '"en"' &&
-                menu.acf.menu_four_en}
-              {localStorage.getItem("language") == '"kgz"' &&
-                menu.acf.menu_four_kgz}
-            </Link>
+                        </li>
           </div>
         ))}
       </Box>
@@ -205,42 +176,47 @@ const Topbar = (props) => {
                 </div>
 
                 <div className="main-menu  d-none d-lg-block">
-                  <nav>
+                  {console.log(menus)}
+                  <nav style={{
+                    display: "flex",
+                    flexDirection: "row-reverse"
+                  }}>
                     {menus?.map((menu) => (
                       <ul id="navigation" key={menu.id}>
-                        <li>
-                          <Link to={menu.acf.menu_one_url}>
+                        {/* <li>
+                          <Link to={menu.acf.menu_url}>
                             {localStorage.getItem("language") == '"ru"' &&
-                              menu.acf.menu_one_ru}
+                              menu.acf.menu_ru}
                             {localStorage.getItem("language") == '"en"' &&
-                              menu.acf.menu_one_en}
+                              menu.acf.menu_en}
                             {localStorage.getItem("language") == '"kgz"' &&
-                              menu.acf.menu_one_kgz}
+                              menu.acf.menu_kgz}
                           </Link>
-                        </li>
+                        </li> */}
 
                         <li>
                           {" "}
-                          <Link className="links" to={menu.acf.menu_two_url}>
-                            {localStorage.getItem("language") == '"ru"' &&
-                              menu.acf.menu_two_ru}
+                          <Link style={{display: "flex", alignItems: "center", }} className="links" to={menu.acf.menu_url}>
+                          {localStorage.getItem("language") == '"ru"' &&
+                              menu.acf.menu_ru}
                             {localStorage.getItem("language") == '"en"' &&
-                              menu.acf.menu_two_en}
+                              menu.acf.menu_en}
                             {localStorage.getItem("language") == '"kgz"' &&
-                              menu.acf.menu_two_kgz}
+                              menu.acf.menu_kgz}
                           </Link>
-                          <ul className="submenu">
+                          {menu.acf.menu_drop_ru && (
+                                             <ul className="submenu">
                             <li>
                               <Link
                                 className="links"
-                                to={menu.acf.menu_two_drop_one_url}
+                                to={menu.acf.menu_drop_url}
                               >
                                 {localStorage.getItem("language") == '"ru"' &&
-                                  menu.acf.menu_two_drop_one_ru}
+                                  menu.acf.menu_drop_ru}
                                 {localStorage.getItem("language") == '"en"' &&
-                                  menu.acf.menu_two_drop_one_en}
+                                  menu.acf.menu_drop_en}
                                 {localStorage.getItem("language") == '"kgz"' &&
-                                  menu.acf.menu_two_drop_one_kgz}
+                                  menu.acf.menu_drop_kgz}
                               </Link>
                             </li>
                             <li>
@@ -269,10 +245,12 @@ const Topbar = (props) => {
                                   menu.acf.menu_two_drop_three_kgz}
                               </Link>
                             </li>
-                          </ul>
+                          </ul>         
+                          )}
+
                         </li>
 
-                        <li>
+                        {/* <li>
                           <Link className="links" to={menu.acf.menu_three_url}>
                             {localStorage.getItem("language") == '"ru"' &&
                               menu.acf.menu_three_ru}
@@ -292,7 +270,7 @@ const Topbar = (props) => {
                             {localStorage.getItem("language") == '"kgz"' &&
                               menu.acf.menu_four_kgz}
                           </Link>
-                        </li>
+                        </li> */}
                       </ul>
                     ))}
                   </nav>
@@ -304,12 +282,19 @@ const Topbar = (props) => {
                   <ul className="d-flex align-items-center " id="navigation">
                     <li className="mr-15">
                       <div className="nav-search search-switch">
-                        <CallIcon
+                        <CallOutlinedIcon
                           fontSize="small"
                           style={{
                             margin: "8px 8px",
                           }}
-                        ></CallIcon>
+                          sx={{
+                            '&:hover': {
+                              backgroundColor: "rgb(240, 240, 240)",
+                              borderRadius: "50%"
+
+                            }
+                          }}
+                        ></CallOutlinedIcon>
                       </div>
                       <ul className="submenu">
                         <li>
@@ -336,6 +321,13 @@ const Topbar = (props) => {
                           fontSize="small"
                           style={{
                             margin: "8px 8px",
+                          }}
+                          sx={{
+                            '&:hover': {
+                              backgroundColor: "rgb(240, 240, 240)",
+                              borderRadius: "50%"
+
+                            }
                           }}
                         ></LanguageIcon>
                       </div>
@@ -390,7 +382,7 @@ const Topbar = (props) => {
                         </MenuItem>
                       </ul>
                     </li>
-                    <li className="mr-15">
+                    {/* <li className="mr-15">
                       <div className="nav-search search-switch">
                         <SearchIcon
                           fontSize="small"
@@ -399,17 +391,21 @@ const Topbar = (props) => {
                           }}
                         ></SearchIcon>
                       </div>
-                    </li>
+                    </li> */}<Link to={"/auth"}>
                     <li className="mr-15">
                       <div className="nav-search search-switch">
-                        <PersonIcon
-                          fontSize="small"
+                         
+                         <AdminPanelSettingsOutlinedIcon
+                          fontSize="medium"
                           style={{
                             margin: "8px 8px",
+                            color: "black"
                           }}
-                        ></PersonIcon>
+                        ></AdminPanelSettingsOutlinedIcon>
+                         
+                        
                       </div>
-                    </li>
+                    </li></Link>
                   </ul>
                 </div>
                 <div

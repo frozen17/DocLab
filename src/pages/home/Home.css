@@ -30,7 +30,7 @@
   padding-right: var(--fg-gutter-x, 1rem);
   padding-left: var(--fg-gutter-x, 1rem);
   margin: 0 auto;
-  padding: 100px 0;
+  padding: 150px 0;
 }
 
 .btn-check[disabled] + .btn-home, .btn-check:disabled + .btn-home {
@@ -84,7 +84,7 @@
 
   .btn-success-home {
 	padding: 10px 10px;
-	margin-right: 20px;
+	margin: 15px !important;
 	color: #536468;
 	background-color: #65E4A3;
 	border-color: #65E4A3;
@@ -120,9 +120,10 @@
 
   .btn-outline-light-home {
 	padding: 10px 10px;
+
 	color: #F1F1F1;
 	border-color: #7f8c94;
-	margin: 0 20px;
+	margin: 15px !important;
   }
   .btn-outline-light-home:hover {
 	color: #536468;

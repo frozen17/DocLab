@@ -7931,9 +7931,12 @@ button.bg-dark:hover {
 }
 
 .align-items-center {
+    
     -ms-flex-align: center !important;
     align-items: center !important
 }
+
+
 
 .align-items-baseline {
     -ms-flex-align: baseline !important;
@@ -8005,7 +8008,20 @@ button.bg-dark:hover {
     align-self: stretch !important
 }
 
+
+@media (max-width:576px) {
+    .align-items-center-btn-home {
+        display: flex;
+        flex-wrap: wrap;
+        -ms-flex-align: center !important;
+        align-items: center !important
+    }
+}
 @media (min-width:576px) {
+    .align-items-center {
+        -ms-flex-align: center !important;
+        align-items: center !important
+    }
     .flex-sm-row {
         -ms-flex-direction: row !important;
         flex-direction: row !important
