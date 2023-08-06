@@ -2387,8 +2387,7 @@ height: 70vh;
 		border-radius: 2px;
 		cursor: pointer;
 		position: absolute;
-		right: 15px;
-		top: 35px;
+		top: 27px;
 	}
 	.offcanvas-menu-overlay {
 		position: fixed;
@@ -2577,7 +2576,7 @@ height: 70vh;
 		cursor: pointer;
 		position: absolute;
 		right: 15px;
-		top: 35px;
+		top: 29px;
 	}
 	.offcanvas-menu-overlay {
 		position: fixed;
