@@ -18,6 +18,7 @@ import Team from './pages/team/Team';
 import Undefined from './components/undefined/Undefined';
 import Topbar from './components/topbar/Topbar';
 import Auth from './pages/auth/Auth';
+import AboutUs from './pages/aboutus/AboutUs';
 
 function App() {
 
@@ -54,6 +55,7 @@ function App() {
       {/* <Header/> */}
       <Routes>
         <Route path='/' element={<Home/>}/>
+        <Route path='/about-company' element={<AboutUs/>}/>
         <Route path='/ourspecialists' element={<Team/>}/>
         <Route path='*' element={<Undefined/>}/>
         <Route path='/auth' element={<Auth/>}/>
@@ -68,7 +70,7 @@ function App() {
 					<WhatsAppIcon sx={{color: "white"}} fontSize="small"/>
 				</button>
 
-				<button onClick={handleClick} className={status ? 'rotate' : 'normal'}>
+				<button onClick={handleClick} style={{backgroundColor: "#ff4745"}} className={status ? 'rotate' : 'normal'}>
 					{status ? <AddIcon fontSize='large' sx={{color: "white"}}/> : <SmsIcon fontSize="small" sx={{color: "white"}}/>}
 				</button>
 			</div>

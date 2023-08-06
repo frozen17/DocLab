@@ -4,5 +4,6 @@
     "service": "Our Services",
     "error-text": "PAGE NOT FOUND",
     "error-descr": "We're sorry, the page you were looking for isn't found here. The link you followed may either be broken or no longer exists. Please try again",
-    "error-btn": "Home Page"
+    "error-btn": "Home Page",
+    "aboutus": "About Us"
 }

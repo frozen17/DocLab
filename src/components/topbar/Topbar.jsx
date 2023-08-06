@@ -16,17 +16,13 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
-import InputIcon from "@mui/icons-material/Input";
-import SearchIcon from "@mui/icons-material/Search";
 import LanguageIcon from "@mui/icons-material/Language";
-import CallIcon from "@mui/icons-material/Call";
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import newlogo from '../../images/newlogo.svg';
 
-import CallOutlinedIcon from '@mui/icons-material/CallOutlined';
-import AdminPanelSettingsOutlinedIcon from '@mui/icons-material/AdminPanelSettingsOutlined';
+import newlogo from "../../images/newlogo.svg";
 
-import PersonIcon from '@mui/icons-material/Person';
+import CallOutlinedIcon from "@mui/icons-material/CallOutlined";
+import AdminPanelSettingsOutlinedIcon from "@mui/icons-material/AdminPanelSettingsOutlined";
+
 const Topbar = (props) => {
   const [age, setAge] = React.useState("");
   const [menus, setMenus] = useState(null);
@@ -82,69 +78,164 @@ const Topbar = (props) => {
           textAlign: "start",
           display: "flex",
           flexDirection: "column-reverse",
-          listStyleType: "none"
+          listStyleType: "none",
         }}
       >
         {menus?.map((menu) => (
-          <div
-            key={menu.id}
-          >
+          <div key={menu.id}>
             <li>
-                          {" "}
-                          <Link style={{display: "flex", alignItems: "center", }} className="links" to={menu.acf.menu_url}>
-                          {localStorage.getItem("language") == '"ru"' &&
-                              menu.acf.menu_ru}
-                            {localStorage.getItem("language") == '"en"' &&
-                              menu.acf.menu_en}
-                            {localStorage.getItem("language") == '"kgz"' &&
-                              menu.acf.menu_kgz}
-                          </Link>
-                          {menu.acf.menu_drop_ru && (
-                                             <ul className="submenu" style={{padding: "10px 20px", listStyleType: "none"}}>
-                            <li>
-                              <Link
-                              style={{padding: "40px 0"}}
-                                className="links"
-                                to={menu.acf.menu_drop_url}
-                              >
-                                {localStorage.getItem("language") == '"ru"' &&
-                                  menu.acf.menu_drop_ru}
-                                {localStorage.getItem("language") == '"en"' &&
-                                  menu.acf.menu_drop_en}
-                                {localStorage.getItem("language") == '"kgz"' &&
-                                  menu.acf.menu_drop_kgz}
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                className="links"
-                                to={menu.acf.menu_two_drop_two_url}
-                              >
-                                {localStorage.getItem("language") == '"ru"' &&
-                                  menu.acf.menu_two_drop_two_ru}
-                                {localStorage.getItem("language") == '"en"' &&
-                                  menu.acf.menu_two_drop_two_en}
-                                {localStorage.getItem("language") == '"kgz"' &&
-                                  menu.acf.menu_two_drop_two_kgz}
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                className="links"
-                                to={menu.acf.menu_two_drop_three_url}
-                              >
-                                {localStorage.getItem("language") == '"ru"' &&
-                                  menu.acf.menu_two_drop_three_ru}
-                                {localStorage.getItem("language") == '"en"' &&
-                                  menu.acf.menu_two_drop_three_en}
-                                {localStorage.getItem("language") == '"kgz"' &&
-                                  menu.acf.menu_two_drop_three_kgz}
-                              </Link>
-                            </li>
-                          </ul>         
-                          )}
+              {" "}
+              <Link
+                style={{ display: "flex", alignItems: "center" }}
+                className="links"
+                to={menu.acf.menu_url}
+              >
+                {localStorage.getItem("language") == '"ru"' && menu.acf.menu_ru}
+                {localStorage.getItem("language") == '"en"' && menu.acf.menu_en}
+                {localStorage.getItem("language") == '"kgz"' &&
+                  menu.acf.menu_kgz}
+              </Link>
+              <Divider />
+              {menu.acf.menu_drop_ru && (
+                <ul
+                  className="submenu"
+                  style={{ padding: "10px 20px", listStyleType: "none" }}
+                >
+                                                {menu.acf.menu_drop_ru && (
+                                                              <li>
+                                <Link
+                                  className="links"
+                                  to={menu.acf.menu_drop_url}
+                                >
+                                  {localStorage.getItem("language") == '"ru"' &&
+                                    menu.acf.menu_drop_ru}
+                                  {localStorage.getItem("language") == '"en"' &&
+                                    menu.acf.menu_drop_en}
+                                  {localStorage.getItem("language") ==
+                                    '"kgz"' && menu.acf.menu_drop_kgz}
+                                </Link>
+                                <Divider style={{ margin: "10px 0" }} />
+                              </li>
+                              )}
+                  
+                  {menu.acf.menu_two_drop_two_ru && (
+                                                              <li>
+                                <Link
+                                  className="links"
+                                  to={menu.acf.menu_two_drop_two_url}
+                                >
+                                  {localStorage.getItem("language") == '"ru"' &&
+                                    menu.acf.menu_two_drop_two_ru}
+                                  {localStorage.getItem("language") == '"en"' &&
+                                    menu.acf.menu_two_drop_two_en}
+                                  {localStorage.getItem("language") ==
+                                    '"kgz"' && menu.acf.menu_two_drop_two_kgz}
+                                </Link><Divider style={{ margin: "10px 0" }} />
+                              </li>
+                              )}
+                  
+                  {menu.acf.menu_two_drop_three_ru && (
+                                                            <li>
+                                <Link
+                                  className="links"
+                                  to={menu.acf.menu_two_drop_three_url}
+                                >
+                                  {localStorage.getItem("language") == '"ru"' &&
+                                    menu.acf.menu_two_drop_three_ru}
+                                  {localStorage.getItem("language") == '"en"' &&
+                                    menu.acf.menu_two_drop_three_en}
+                                  {localStorage.getItem("language") ==
+                                    '"kgz"' && menu.acf.menu_two_drop_three_kgz}
+                                </Link><Divider style={{ margin: "10px 0" }} />
+                              </li>
+                            )}
+                  
+                  {menu.acf.menu_two_drop_four_ru && (
+                                                              <li>
+                                <Link
+                                  className="links"
+                                  to={menu.acf.menu_two_drop_four_url}
+                                >
+                                  {localStorage.getItem("language") == '"ru"' &&
+                                    menu.acf.menu_two_drop_four_ru}
+                                  {localStorage.getItem("language") == '"en"' &&
+                                    menu.acf.menu_two_drop_four_en}
+                                  {localStorage.getItem("language") ==
+                                    '"kgz"' && menu.acf.menu_two_drop_four_kgz}
+                                </Link><Divider style={{ margin: "10px 0" }} />
+                              </li>
+                              )}
+                              
 
-                        </li>
+{menu.acf.menu_two_drop_five_ru && (
+                                                                <li>
+                                <Link
+                                  className="links"
+                                  to={menu.acf.menu_two_drop_five_url}
+                                >
+                                  {localStorage.getItem("language") == '"ru"' &&
+                                    menu.acf.menu_two_drop_five_ru}
+                                  {localStorage.getItem("language") == '"en"' &&
+                                    menu.acf.menu_two_drop_five_en}
+                                  {localStorage.getItem("language") ==
+                                    '"kgz"' && menu.acf.menu_two_drop_five_kgz}
+                                </Link><Divider style={{ margin: "10px 0" }} />
+                              </li>
+                                )}
+                                
+                                {menu.acf.menu_two_drop_six_ru && (
+                                                                <li>
+                                <Link
+                                  className="links"
+                                  to={menu.acf.menu_two_drop_six_url}
+                                >
+                                  {localStorage.getItem("language") == '"ru"' &&
+                                    menu.acf.menu_two_drop_six_ru}
+                                  {localStorage.getItem("language") == '"en"' &&
+                                    menu.acf.menu_two_drop_six_en}
+                                  {localStorage.getItem("language") ==
+                                    '"kgz"' && menu.acf.menu_two_drop_six_kgz}
+                                </Link><Divider style={{ margin: "10px 0" }} />
+                              </li>
+                                )}
+                                
+                                {menu.acf.menu_two_drop_seven_ru && (
+                                                                <li>
+                                <Link
+                                  className="links"
+                                  to={menu.acf.menu_two_drop_seven_url}
+                                >
+                                  {localStorage.getItem("language") == '"ru"' &&
+                                    menu.acf.menu_two_drop_seven_ru}
+                                  {localStorage.getItem("language") == '"en"' &&
+                                    menu.acf.menu_two_drop_seven_en}
+                                  {localStorage.getItem("language") ==
+                                    '"kgz"' && menu.acf.menu_two_drop_seven_kgz}
+                                </Link><Divider style={{ margin: "10px 0" }} />
+                              </li>
+                                )}
+                                
+                                {menu.acf.menu_two_drop_eight_ru && (
+                                                                <li>
+                                <Link
+                                  className="links"
+                                  to={menu.acf.menu_two_drop_eight_url}
+                                >
+                                  {localStorage.getItem("language") == '"ru"' &&
+                                    menu.acf.menu_two_drop_eight_ru}
+                                  {localStorage.getItem("language") == '"en"' &&
+                                    menu.acf.menu_two_drop_eight_en}
+                                  {localStorage.getItem("language") ==
+                                    '"kgz"' && menu.acf.menu_two_drop_eight_kgz}
+                                </Link>
+                                <Divider style={{ margin: "10px 0" }} />
+                              </li>
+                                )}
+                                
+                                
+                </ul>
+              )}
+            </li>
           </div>
         ))}
       </Box>
@@ -156,17 +247,24 @@ const Topbar = (props) => {
   };
 
   return (
-    <header style={{ width: "90%", margin: "0 auto", position: "fixed", zIndex: "999", left: "0", right: "0", top: "20px"
-  }}>
-      <div className="header-area " style={{borderRadius: "50px"}}>
-        <div
-          className="header-sticky main-header"
-        >
+    <header
+      style={{
+        width: "90%",
+        margin: "0 auto",
+        position: "fixed",
+        zIndex: "999",
+        left: "0",
+        right: "0",
+        top: "20px",
+      }}
+    >
+      <div className="header-area " style={{ borderRadius: "50px" }}>
+        <div className="header-sticky main-header">
           <div className="container-fluid">
             <div className="menu-wrapper d-flex align-items-center justify-content-between">
               <div className="header-left d-flex align-items-center">
                 <div className="logo">
-                  <a href="/" style={{padding: "0"}}>
+                  <a href="/" style={{ padding: "0" }}>
                     <img
                       src={newlogo}
                       style={{ width: "100px" }}
@@ -176,28 +274,22 @@ const Topbar = (props) => {
                 </div>
 
                 <div className="main-menu  d-none d-lg-block">
-                  {console.log(menus)}
-                  <nav style={{
-                    display: "flex",
-                    flexDirection: "row-reverse"
-                  }}>
+                  <nav
+                    style={{
+                      display: "flex",
+                      flexDirection: "row-reverse",
+                    }}
+                  >
                     {menus?.map((menu) => (
                       <ul id="navigation" key={menu.id}>
-                        {/* <li>
-                          <Link to={menu.acf.menu_url}>
-                            {localStorage.getItem("language") == '"ru"' &&
-                              menu.acf.menu_ru}
-                            {localStorage.getItem("language") == '"en"' &&
-                              menu.acf.menu_en}
-                            {localStorage.getItem("language") == '"kgz"' &&
-                              menu.acf.menu_kgz}
-                          </Link>
-                        </li> */}
-
                         <li>
                           {" "}
-                          <Link style={{display: "flex", alignItems: "center", }} className="links" to={menu.acf.menu_url}>
-                          {localStorage.getItem("language") == '"ru"' &&
+                          <Link
+                            style={{ display: "flex", alignItems: "center" }}
+                            className="links"
+                            to={menu.acf.menu_url}
+                          >
+                            {localStorage.getItem("language") == '"ru"' &&
                               menu.acf.menu_ru}
                             {localStorage.getItem("language") == '"en"' &&
                               menu.acf.menu_en}
@@ -205,72 +297,93 @@ const Topbar = (props) => {
                               menu.acf.menu_kgz}
                           </Link>
                           {menu.acf.menu_drop_ru && (
-                                             <ul className="submenu">
-                            <li>
-                              <Link
-                                className="links"
-                                to={menu.acf.menu_drop_url}
-                              >
-                                {localStorage.getItem("language") == '"ru"' &&
-                                  menu.acf.menu_drop_ru}
-                                {localStorage.getItem("language") == '"en"' &&
-                                  menu.acf.menu_drop_en}
-                                {localStorage.getItem("language") == '"kgz"' &&
-                                  menu.acf.menu_drop_kgz}
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                className="links"
-                                to={menu.acf.menu_two_drop_two_url}
-                              >
-                                {localStorage.getItem("language") == '"ru"' &&
-                                  menu.acf.menu_two_drop_two_ru}
-                                {localStorage.getItem("language") == '"en"' &&
-                                  menu.acf.menu_two_drop_two_en}
-                                {localStorage.getItem("language") == '"kgz"' &&
-                                  menu.acf.menu_two_drop_two_kgz}
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                className="links"
-                                to={menu.acf.menu_two_drop_three_url}
-                              >
-                                {localStorage.getItem("language") == '"ru"' &&
-                                  menu.acf.menu_two_drop_three_ru}
-                                {localStorage.getItem("language") == '"en"' &&
-                                  menu.acf.menu_two_drop_three_en}
-                                {localStorage.getItem("language") == '"kgz"' &&
-                                  menu.acf.menu_two_drop_three_kgz}
-                              </Link>
-                            </li>
-                          </ul>         
+                            <ul className="submenu">
+                              {menu.acf.menu_drop_ru && (
+                                                              <li>
+                                <Link
+                                  className="links"
+                                  to={menu.acf.menu_drop_url}
+                                >
+                                  {localStorage.getItem("language") == '"ru"' &&
+                                    menu.acf.menu_drop_ru}
+                                  {localStorage.getItem("language") == '"en"' &&
+                                    menu.acf.menu_drop_en}
+                                  {localStorage.getItem("language") ==
+                                    '"kgz"' && menu.acf.menu_drop_kgz}
+                                </Link>
+                                <Divider  />
+                              </li>
+                              )}
+                              {menu.acf.menu_two_drop_two_ru && (
+                                                              <li>
+                                <Link
+                                  className="links"
+                                  to={menu.acf.menu_two_drop_two_url}
+                                >
+                                  {localStorage.getItem("language") == '"ru"' &&
+                                    menu.acf.menu_two_drop_two_ru}
+                                  {localStorage.getItem("language") == '"en"' &&
+                                    menu.acf.menu_two_drop_two_en}
+                                  {localStorage.getItem("language") ==
+                                    '"kgz"' && menu.acf.menu_two_drop_two_kgz}
+                                </Link>
+                                <Divider />
+                              </li>
+                              )}
+                            {menu.acf.menu_two_drop_three_ru && (
+                                                            <li>
+                                <Link
+                                  className="links"
+                                  to={menu.acf.menu_two_drop_three_url}
+                                >
+                                  {localStorage.getItem("language") == '"ru"' &&
+                                    menu.acf.menu_two_drop_three_ru}
+                                  {localStorage.getItem("language") == '"en"' &&
+                                    menu.acf.menu_two_drop_three_en}
+                                  {localStorage.getItem("language") ==
+                                    '"kgz"' && menu.acf.menu_two_drop_three_kgz}
+                                </Link>
+                                <Divider  />
+                              </li>
+                            )}
+
+                              {menu.acf.menu_two_drop_four_ru && (
+                                                              <li>
+                                <Link
+                                  className="links"
+                                  to={menu.acf.menu_two_drop_four_url}
+                                >
+                                  {localStorage.getItem("language") == '"ru"' &&
+                                    menu.acf.menu_two_drop_four_ru}
+                                  {localStorage.getItem("language") == '"en"' &&
+                                    menu.acf.menu_two_drop_four_en}
+                                  {localStorage.getItem("language") ==
+                                    '"kgz"' && menu.acf.menu_two_drop_four_kgz}
+                                </Link>
+                                <Divider  />
+                              </li>
+                              )}
+
+                                {menu.acf.menu_two_drop_five_ru && (
+                                                                <li>
+                                <Link
+                                  className="links"
+                                  to={menu.acf.menu_two_drop_five_url}
+                                >
+                                  {localStorage.getItem("language") == '"ru"' &&
+                                    menu.acf.menu_two_drop_five_ru}
+                                  {localStorage.getItem("language") == '"en"' &&
+                                    menu.acf.menu_two_drop_five_en}
+                                  {localStorage.getItem("language") ==
+                                    '"kgz"' && menu.acf.menu_two_drop_five_kgz}
+                                </Link>
+                                <Divider  />
+                              </li>
+                                )}
+
+                            </ul>
                           )}
-
                         </li>
-
-                        {/* <li>
-                          <Link className="links" to={menu.acf.menu_three_url}>
-                            {localStorage.getItem("language") == '"ru"' &&
-                              menu.acf.menu_three_ru}
-                            {localStorage.getItem("language") == '"en"' &&
-                              menu.acf.menu_three_en}
-                            {localStorage.getItem("language") == '"kgz"' &&
-                              menu.acf.menu_three_kgz}
-                          </Link>
-                        </li>
-
-                        <li>
-                          <Link className="links" to={menu.acf.menu_four_url}>
-                            {localStorage.getItem("language") == '"ru"' &&
-                              menu.acf.menu_four_ru}
-                            {localStorage.getItem("language") == '"en"' &&
-                              menu.acf.menu_four_en}
-                            {localStorage.getItem("language") == '"kgz"' &&
-                              menu.acf.menu_four_kgz}
-                          </Link>
-                        </li> */}
                       </ul>
                     ))}
                   </nav>
@@ -283,16 +396,15 @@ const Topbar = (props) => {
                     <li className="mr-15">
                       <div className="nav-search search-switch">
                         <CallOutlinedIcon
-                          fontSize="small"
+                          fontSize="medium"
                           style={{
                             margin: "8px 8px",
                           }}
                           sx={{
-                            '&:hover': {
+                            "&:hover": {
                               backgroundColor: "rgb(240, 240, 240)",
-                              borderRadius: "50%"
-
-                            }
+                              borderRadius: "50%",
+                            },
                           }}
                         ></CallOutlinedIcon>
                       </div>
@@ -318,16 +430,15 @@ const Topbar = (props) => {
                     <li>
                       <div>
                         <LanguageIcon
-                          fontSize="small"
+                          fontSize="medium"
                           style={{
                             margin: "8px 8px",
                           }}
                           sx={{
-                            '&:hover': {
+                            "&:hover": {
                               backgroundColor: "rgb(240, 240, 240)",
-                              borderRadius: "50%"
-
-                            }
+                              borderRadius: "50%",
+                            },
                           }}
                         ></LanguageIcon>
                       </div>
@@ -382,57 +493,46 @@ const Topbar = (props) => {
                         </MenuItem>
                       </ul>
                     </li>
-                    {/* <li className="mr-15">
-                      <div className="nav-search search-switch">
-                        <SearchIcon
-                          fontSize="small"
-                          style={{
-                            margin: "8px 8px",
-                          }}
-                        ></SearchIcon>
-                      </div>
-                    </li> */}<Link to={"/auth"}>
-                    <li className="mr-15">
-                      <div className="nav-search search-switch">
-                         
-                         <AdminPanelSettingsOutlinedIcon
-                          fontSize="medium"
-                          style={{
-                            margin: "8px 8px",
-                            color: "black"
-                          }}
-                        ></AdminPanelSettingsOutlinedIcon>
-                         
-                        
-                      </div>
-                    </li></Link>
+                    <Link to={"/auth"}>
+                      <li className="mr-15">
+                        <div className="nav-search search-switch">
+                          <AdminPanelSettingsOutlinedIcon
+                            fontSize="medium"
+                            style={{
+                              margin: "8px 8px",
+                              color: "black",
+                            }}
+                          ></AdminPanelSettingsOutlinedIcon>
+                        </div>
+                      </li>
+                    </Link>
                   </ul>
                 </div>
                 <div
-                        className="canvas__open"
-                        style={{
-                          display: "flex",
-                          justifyContent: "center",
-                          alignItems: "center",
-                          border: "none",
-                        }}
-                      >
-                        <IconButton
-                          color="inherit"
-                          aria-label="open drawer"
-                          edge="end"
-                          onClick={handleDrawerToggle}
-                          sx={{
-                            margin: "0 10px 43px 15px",
-                            mr: 0,
-                            ml: "auto",
-                            display: { md: "none" },
-                            float: "inline-end",
-                          }}
-                        >
-                          <MenuIcon fontSize="large" />
-                        </IconButton>
-                      </div>
+                  className="canvas__open"
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    border: "none",
+                  }}
+                >
+                  <IconButton
+                    color="inherit"
+                    aria-label="open drawer"
+                    edge="end"
+                    onClick={handleDrawerToggle}
+                    sx={{
+                      margin: "0 10px 43px 15px",
+                      mr: 0,
+                      ml: "auto",
+                      display: { md: "none" },
+                      float: "inline-end",
+                    }}
+                  >
+                    <MenuIcon fontSize="large" />
+                  </IconButton>
+                </div>
               </div>
             </div>
           </div>

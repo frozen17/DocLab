@@ -21,7 +21,6 @@ const Partners = () => {
   }, []);
   return (
     <div>
-      {console.log(partners)}
       <div className="logo-slider">
         <div className="logo-slide-track">
           {partners?.map((partner) => (

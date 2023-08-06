@@ -34,7 +34,6 @@ const Team = () => {
                     </div>
                 </div>
             </div>
-            {console.log(teams)}
             <div className="row">
                 {teams?.map((team) => (
                                   <div className="col-lg-4 col-md-6 col-sm-6" key={team.id}>

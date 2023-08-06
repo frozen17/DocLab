@@ -8,32 +8,33 @@ import constant from "../../utils/url.json";
 import SignUpApi from "./SignUpApi";
 
 
-const SignUp = (props) => {
+const SignUp = () => {
 
-  const [APIDetailsSignUp, setAPIDetailsSignUp] = useState({
-    user: '',    
-    email: '',
-    pass: '',
-  })
-const [signUpDetails, setSignUpDetails] = useState({
-    user: '',
-    email: '',
-    pass: '',
-})
+const {username, setName} = useState("")
+const {useremail, setEmail} = useState("")
+const {userpass, setPass} = useState("")
 
-const handleChange = (e) =>  {
-    const { name, value } = e.target
-    setSignUpDetails(prev => {
-        return (
-            { ...prev, [name]: value }
-        )
-    })
-}
 
 const handleSubmit = (e) => {
-  e.preventDefault();
-    setAPIDetailsSignUp({ ...signUpDetails })
+  axios
+      .post("http://backdoclab.vr.kg/simple-jwt-login/v1/users", {
+        username,
+        useremail,
+        userpass,
+      }, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        withCredentials: true, // Enable sending cookies along with the request
+      })
+      .then((response) => console.log(response.data))
+      .catch((error) => console.error("Error:", error));
 }
+  useEffect(() => {
+    handleSubmit();
+  }, []);
+
+
 
   return (
     <div className="form-container-auth sign-up-container-auth">
@@ -55,24 +56,23 @@ const handleSubmit = (e) => {
           type="text"
           placeholder="Name"
           id="username"
-          name="user" value={signUpDetails.user} onChange={handleChange} 
+          value={username} onChange={(e) => setName(e.target.value)}
         />
         <input
           type="email"
           placeholder="Email"
-          id="email"
-          name="email" value={signUpDetails.email} onChange={handleChange}
+          id="useremail"
+          value={useremail} onChange={(e) => setEmail(e.target.value)}
         />
         <input
           type="password"
           placeholder="Password"
-          id="password"
-          name="pass" value={signUpDetails.pass} onChange={handleChange}
+          id="userpass"
+          value={userpass} onChange={(e) => setPass(e.target.value)}
         />
         <button className="button-auth" type="submit">
           Sign Up
         </button>
-        <SignUpApi APIDetailsSignUp={APIDetailsSignUp} setUsername={props.setUsername} setIsLoggedIn={props.setIsLoggedIn} setServerMessage={props.setServerMessage} />
       </form>
       
     </div>

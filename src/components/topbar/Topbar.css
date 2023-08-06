@@ -55,7 +55,6 @@
     padding: 20px 19px;
     display: block;
     font-size: 15px;
-    font-family: "Poppins", sans-serif;
     -webkit-transition: .3s;
     -moz-transition: .3s;
     -o-transition: .3s;
@@ -72,7 +71,7 @@
 }
 
 .header-area .menu-wrapper .main-menu ul li:hover>a {
-    color: #9F78FF
+    color: #ff4745;
 }
 
 .header-area .menu-wrapper .main-menu ul li:hover>ul.submenu {
@@ -95,7 +94,7 @@
     opacity: 0;
     box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.05);
     padding: 17px 0;
-    border-top: 3px solid #9F78FF;
+    border-top: 3px solid #ff4745;
     -webkit-transition: .3s;
     -moz-transition: .3s;
     -o-transition: .3s;

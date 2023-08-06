@@ -8,6 +8,8 @@ import Partners from "../partners/Partners";
 import Services from "../services/Services";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import { main } from "@popperjs/core";
+import AboutUs from "../aboutus/AboutUs";
+import Why from "../why/Why";
 
 function Home() {
   const [mainpage, setMainPage] = useState(null);
@@ -28,7 +30,6 @@ function Home() {
   }, []);
   return (
     <div>
-      {console.log(mainpage)}
       {mainpage?.map((mainpage) => (
       <div
         style={{
@@ -83,13 +84,13 @@ function Home() {
                 </div>
               </div>
 
-              <div class="swiper">
+              <div className="swiper">
                 <div
-                  class="swiper-container swiper-shadow swiper-theme"
+                  className="swiper-container swiper-shadow swiper-theme"
                   data-swiper='{"slidesPerView":2,"breakpoints":{"640":{"slidesPerView":2,"spaceBetween":20},"768":{"slidesPerView":4,"spaceBetween":40},"992":{"slidesPerView":5,"spaceBetween":40},"1024":{"slidesPerView":4,"spaceBetween":50},"1025":{"slidesPerView":6,"spaceBetween":50}},"spaceBetween":10,"grabCursor":true,"pagination":{"el":".swiper-pagination","clickable":true},"loop":true,"freeMode":true,"autoplay":{"delay":2500,"disableOnInteraction":false}}'
                 >
                   <div
-                    class="swiper-wrapper"
+                    className="swiper-wrapper"
                     style={{ background: "transparent" }}
                   >
                     <Partners />
@@ -102,6 +103,8 @@ function Home() {
       </div>))}
       <Services />
       <Team />
+      <AboutUs/>
+      <Why/>
     </div>
   );
 }

@@ -48,7 +48,6 @@ const Auth = () => {
           <LinkTab label="Sign IN" />
           <LinkTab label="Sign UP" />
         </Tabs>
-        {console.log(value)}
         <div className="container-auth" id="container-auth">
           {value === 0 && <SignIn />}
 

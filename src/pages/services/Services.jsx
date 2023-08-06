@@ -51,9 +51,13 @@ const Services = () => {
         };
       }, []);
   return (
+<div>
+
+<h2 style={{textAlign: "center", margin: "30px auto", fontSize: "30px", fontWeight: "bold"}}>Наши Услуги</h2>
     <section className='cards-background' id='card-services' ref={cardsRef}>
-      {console.log(services)}
+      
       <div id="cards-services">
+        
         {services?.map((service) => (
             <div className="card-services" key={service.id}>
               <div className="card-content-services">
@@ -94,6 +98,7 @@ const Services = () => {
   
 </div>
     </section>
+</div>
   )
 }
 
