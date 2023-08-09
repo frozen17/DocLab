@@ -3,6 +3,7 @@ import "./Auth.css";
 import GoogleIcon from "@mui/icons-material/Google";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
+import { useTranslation } from "react-i18next";
 
 import Box from "@mui/material/Box";
 import Tabs from "@mui/material/Tabs";
@@ -24,7 +25,7 @@ function LinkTab(props) {
 
 const Auth = () => {
   const [value, setValue] = useState(0);
-
+  const { t } = useTranslation();
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -45,8 +46,8 @@ const Auth = () => {
           onChange={handleChange}
           aria-label="nav tabs example"
         >
-          <LinkTab label="Sign IN" />
-          <LinkTab label="Sign UP" />
+          <LinkTab label={t("login")} />
+          <LinkTab label={t("signup")} />
         </Tabs>
         <div className="container-auth" id="container-auth">
           {value === 0 && <SignIn />}

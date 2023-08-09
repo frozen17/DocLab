@@ -2,13 +2,14 @@ import React from 'react'
 import GoogleIcon from '@mui/icons-material/Google';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
+import { useTranslation } from "react-i18next";
 
 
 const SignIn = () => {
+  const { t } = useTranslation();
   return (
 <div className="form-container-auth sign-in-container-auth">
         <form action="#">
-          <h1>Sign in</h1>
           <div className="social-container-auth">
             <a href="#" className="social-auth">
               <FacebookIcon fontSize='small'/>
@@ -20,11 +21,11 @@ const SignIn = () => {
               <TwitterIcon fontSize='small'/>
             </a>
           </div>
-          <span>or use your account</span>
+          <span>{t("use-account")} </span>
           <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Password" />
-          <a href="#" className="social-auth">Forgot your password?</a>
-          <button className='button-auth' >Sign In</button>
+          <input type="password" placeholder={t("password")} />
+          <a href="#" className="social-auth">{t("forgot-passw")}</a>
+          <button className='button-auth' >{t("login")}</button>
         </form>
       </div>
   )
