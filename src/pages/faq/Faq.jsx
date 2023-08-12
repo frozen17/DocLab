@@ -65,7 +65,7 @@ const Faq = () => {
                   id="panel1a-header"
                   
                 >
-                  <Typography >
+                  <Typography style={{fontSize: 20, color: 'rgb(0, 0, 0)'}}>
                   {localStorage.getItem("language") === '"ru"' &&
                       faq.acf.question_ru}
                     {localStorage.getItem("language") === '"en"' &&
@@ -75,7 +75,7 @@ const Faq = () => {
                   </Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
+                  <Typography style={{fontSize: 17}}>
                   {localStorage.getItem("language") == '"ru"' &&
                       faq.acf.answer_ru}
                     {localStorage.getItem("language") == '"en"' &&

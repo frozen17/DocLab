@@ -93,8 +93,8 @@
   }
   .btn-success-home:hover {
 	color: #536468;
-	background-color: #7ce8b1;
-	border-color: #74e7ac;
+	background-color: #9c9c9c;
+	border-color: #9c9c9c;
   }
   .btn-check:focus + .btn-success-home, .btn-success-home:focus {
 	color: #536468;
@@ -124,10 +124,11 @@
 	color: #F1F1F1;
 	border-color: #ff4745;
 	margin: 15px !important;
+	transition: 0.3s;
   }
   .btn-outline-light-home:hover {
 	color: #536468;
-	background-color: #F1F1F1;
+	background-color: rgba(172, 172, 172, 0.9);
 	border-color: #7f8c94;
   }
   .btn-check:focus + .btn-outline-light-home, .btn-outline-light-home:focus {

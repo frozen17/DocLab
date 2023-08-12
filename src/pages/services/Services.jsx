@@ -53,7 +53,7 @@ const Services = () => {
   return (
 <div id='services'>
 
-<h2 style={{textAlign: "center", margin: "30px auto", fontSize: "30px", fontWeight: "bold"}}>Наши Услуги</h2>
+<h2 style={{textAlign: "center", margin: "30px auto", fontSize: "30px", fontWeight: "bold"}}>{t("home-text-2")}</h2>
     <section className='cards-background' id='card-services' ref={cardsRef}>
       
       <div id="cards-services">

@@ -15,5 +15,7 @@
     "name-signup" : "Enter your name",
     "faq-main-text" : "frequently asked questions",
     "faq-secondary-text" : "We have posted the most popular questions from our regular customers, and we will be glad if you ask yours!",
-    "team" : "Our team"
+    "team" : "Our team",
+    "home-text-1" : "Learn more",
+    "home-text-2" : "Our services"
 }

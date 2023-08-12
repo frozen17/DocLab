@@ -69,10 +69,10 @@ function Home() {
                   </p>
                   <div className="d-sm-flex align-items-center align-items-center-btn-home justify-content-center btn-home-main gap-3">
                     <button className="btn-home btn-success-home text-black mb-3 w-75 text-dark">
-                      Подробнее о нас
+                    {t("home-text-1")}
                     </button>
                     <button className="btn-home btn-outline-light-home mb-3 w-75 text-dark" href="#services">
-                      Наши услуги <ArrowDownwardIcon fontSize="small" />
+                    {t("home-text-2")} <ArrowDownwardIcon fontSize="small" />
                     </button>
                   </div>
                 </div>
