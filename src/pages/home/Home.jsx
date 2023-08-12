@@ -10,6 +10,7 @@ import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import { main } from "@popperjs/core";
 import AboutUs from "../aboutus/AboutUs";
 import Why from "../why/Why";
+import { Navigate } from 'react-router-dom';
 
 function Home() {
   const [mainpage, setMainPage] = useState(null);
@@ -70,7 +71,7 @@ function Home() {
                     <button className="btn-home btn-success-home text-black mb-3 w-75 text-dark">
                       Подробнее о нас
                     </button>
-                    <button className="btn-home btn-outline-light-home mb-3 w-75 text-dark">
+                    <button className="btn-home btn-outline-light-home mb-3 w-75 text-dark" href="#services">
                       Наши услуги <ArrowDownwardIcon fontSize="small" />
                     </button>
                   </div>

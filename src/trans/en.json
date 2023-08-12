@@ -12,5 +12,7 @@
     "password" : "Password",
     "forgot-passw" : "Forgot your password?",
     "use-email" : "or use your email for registration",
-    "name-signup" : "Enter your name"
+    "name-signup" : "Enter your name",
+    "faq-main-text" : "frequently asked questions",
+    "faq-secondary-text" : "We have posted the most popular questions from our regular customers, and we will be glad if you ask yours!"
 }

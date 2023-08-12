@@ -19,6 +19,7 @@ import Undefined from './components/undefined/Undefined';
 import Topbar from './components/topbar/Topbar';
 import Auth from './pages/auth/Auth';
 import AboutUs from './pages/aboutus/AboutUs';
+import Faq from './pages/faq/Faq';
 
 function App() {
 
@@ -59,6 +60,7 @@ function App() {
         <Route path='/ourspecialists' element={<Team/>}/>
         <Route path='*' element={<Undefined/>}/>
         <Route path='/auth' element={<Auth/>}/>
+        <Route path='/faq' element={<Faq/>}/>
       </Routes>
 
       <div className="container-float"onClose={handleClose}>

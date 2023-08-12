@@ -51,7 +51,7 @@ const Services = () => {
         };
       }, []);
   return (
-<div>
+<div id='services'>
 
 <h2 style={{textAlign: "center", margin: "30px auto", fontSize: "30px", fontWeight: "bold"}}>Наши Услуги</h2>
     <section className='cards-background' id='card-services' ref={cardsRef}>
