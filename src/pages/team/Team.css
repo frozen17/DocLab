@@ -12,7 +12,7 @@
 }
 
 .team__item:hover img {
-	border-color: #13a2b7;
+	border-color: rgba(255, 71, 69, 0.7);
 }
 
 .team__item img {

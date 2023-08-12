@@ -6,8 +6,10 @@ import axios from 'axios'
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
+import { useTranslation } from "react-i18next";
 
 const Team = () => {
+  const { t } = useTranslation();
     const [ teams, setTeams] = useState(null)
 
     const getData = async () => {
@@ -29,8 +31,7 @@ const Team = () => {
             <div className="row">
                 <div className="col-lg-12 text-center">
                     <div className="section-title">
-                        <span>Our Team</span>
-                        <h2>Our Expert Doctors</h2>
+                        <span>{t("team")}</span>
                     </div>
                 </div>
             </div>
