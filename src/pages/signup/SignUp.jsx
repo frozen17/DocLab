@@ -6,10 +6,12 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import constant from "../../utils/url.json";
 import SignUpApi from "./SignUpApi";
+import { useTranslation } from "react-i18next";
 
 
 const SignUp = () => {
 
+const { t } = useTranslation();
 const {username, setName} = useState("")
 const {useremail, setEmail} = useState("")
 const {userpass, setPass} = useState("")
@@ -39,7 +41,6 @@ const handleSubmit = (e) => {
   return (
     <div className="form-container-auth sign-up-container-auth">
       <form onSubmit={handleSubmit}>
-        <h1>Create Account</h1>
         <div className="social-container-auth">
           <a href="#" className="social-auth">
             <FacebookIcon fontSize="small" />
@@ -51,10 +52,10 @@ const handleSubmit = (e) => {
             <TwitterIcon fontSize="small" />
           </a>
         </div>
-        <span>or use your email for registration</span>
+        <span>{t("use-email")}</span>
         <input
           type="text"
-          placeholder="Name"
+          placeholder={t("name-signup")}
           id="username"
           value={username} onChange={(e) => setName(e.target.value)}
         />
@@ -66,12 +67,12 @@ const handleSubmit = (e) => {
         />
         <input
           type="password"
-          placeholder="Password"
+          placeholder={t("password")}
           id="userpass"
           value={userpass} onChange={(e) => setPass(e.target.value)}
         />
         <button className="button-auth" type="submit">
-          Sign Up
+        {t("signup")}
         </button>
       </form>
       
