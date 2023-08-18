@@ -104,7 +104,6 @@ function Home() {
       <Services />
       <Team />
       <AboutUs/>
-      <Why/>
     </div>
   );
 }

@@ -5,6 +5,7 @@ import constant from "../../utils/url.json";
 
 import { useTranslation } from "react-i18next";
 import { color } from '@mui/system';
+import Why from '../why/Why';
 
 const AboutUs = () => {
     const [about, setAbout] = useState(null)
@@ -79,6 +80,7 @@ const AboutUs = () => {
             </div>
         ))}
     </main>
+    <Why/>
     </div>
   )
 }
