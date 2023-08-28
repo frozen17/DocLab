@@ -19,6 +19,7 @@ import Undefined from './components/undefined/Undefined';
 import Topbar from './components/topbar/Topbar';
 import Auth from './pages/auth/Auth';
 import AboutUs from './pages/aboutus/AboutUs';
+import Servicess from './pages/servicess/Servicess';
 
 function App() {
 
@@ -26,7 +27,6 @@ function App() {
 	
     const [status, setStatus] = useState(false)
     const [loader, setLoader] = useState(true);
-    const [stylebtn, setStylebtn] = useState("btn-app")
     const spinner = document.getElementById('spinner');
 
     if(spinner){
@@ -59,6 +59,8 @@ function App() {
         <Route path='/ourspecialists' element={<Team/>}/>
         <Route path='*' element={<Undefined/>}/>
         <Route path='/auth' element={<Auth/>}/>
+
+        <Route path='/test' element={<Servicess/>}/>
       </Routes>
 
       <div className="container-float"onClose={handleClose}>

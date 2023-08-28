@@ -12,5 +12,6 @@
     "password" : "Password",
     "forgot-passw" : "Forgot your password?",
     "use-email" : "or use your email for registration",
-    "name-signup" : "Enter your name"
+    "name-signup" : "Enter your name",
+    "back": "Back"
 }
