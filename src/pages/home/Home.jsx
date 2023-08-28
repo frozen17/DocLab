@@ -2,18 +2,14 @@ import React, { useState, useEffect } from "react";
 import "./Home.css";
 import constant from "../../utils/url.json";
 import axios from "axios";
-import { useTranslation } from "react-i18next";
 import Team from "../team/Team";
 import Partners from "../partners/Partners";
-import Services from "../services/Services";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
-import { main } from "@popperjs/core";
 import AboutUs from "../aboutus/AboutUs";
-import Why from "../why/Why";
+import Servicess from "../servicess/Servicess";
 
 function Home() {
   const [mainpage, setMainPage] = useState(null);
-  const { t } = useTranslation();
 
   const getData = async () => {
     try {
@@ -27,7 +23,7 @@ function Home() {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [mainpage]);
   return (
     <div>
       {mainpage?.map((mainpage) => (
@@ -51,19 +47,19 @@ function Home() {
                     className="text-white fs-5 fs-xl-6 text-dark"
                     style={{ fontSize: "30px", fontWeight: "900" }}
                   >
-                    {localStorage.getItem("language") == '"ru"' &&
+                    {localStorage.getItem("language") === '"ru"' &&
                       mainpage.acf.ru_title}
-                    {localStorage.getItem("language") == '"en"' &&
+                    {localStorage.getItem("language") === '"en"' &&
                       mainpage.acf.en_title}
-                    {localStorage.getItem("language") == '"kgz"' &&
+                    {localStorage.getItem("language") === '"kgz"' &&
                       mainpage.acf.kgz_title}
                   </h1>
                   <p className="text-white py-lg-3 py-2 text-dark">
-                    {localStorage.getItem("language") == '"ru"' &&
+                    {localStorage.getItem("language") === '"ru"' &&
                       mainpage.acf.ru_descr}
-                    {localStorage.getItem("language") == '"en"' &&
+                    {localStorage.getItem("language") === '"en"' &&
                       mainpage.acf.en_descr}
-                    {localStorage.getItem("language") == '"kgz"' &&
+                    {localStorage.getItem("language") === '"kgz"' &&
                       mainpage.acf.kgz_descr}
                   </p>
                   <div className="d-sm-flex align-items-center align-items-center-btn-home justify-content-center btn-home-main gap-3">
@@ -101,7 +97,7 @@ function Home() {
           </section>
         
       </div>))}
-      <Services />
+      <Servicess />
       <Team />
       <AboutUs/>
     </div>

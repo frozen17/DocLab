@@ -4,7 +4,6 @@ import axios from 'axios';
 import constant from "../../utils/url.json";
 
 import { useTranslation } from "react-i18next";
-import { color } from '@mui/system';
 import Why from '../why/Why';
 
 const AboutUs = () => {
@@ -40,11 +39,11 @@ const AboutUs = () => {
           <p className="fs-1" style={{color: `${about.acf.text_color}`}}>{t("aboutus")}</p>
           <div className="col-12 col-md-7 mx-auto">
             <h1 className="fs-lg-4 fs-md-4 fs-3 my-4 about-text"style={{color: `${about.acf.text_color}`}} >
-            {localStorage.getItem("language") == '"ru"' &&
+            {localStorage.getItem("language") === '"ru"' &&
                       about.acf.text_ru}
-                    {localStorage.getItem("language") == '"en"' &&
+                    {localStorage.getItem("language") === '"en"' &&
                       about.acf.text_en}
-                    {localStorage.getItem("language") == '"kgz"' &&
+                    {localStorage.getItem("language") === '"kgz"' &&
                       about.acf.text_kgz}
             </h1>
           </div>
@@ -66,11 +65,11 @@ const AboutUs = () => {
             textAlign: "center"
           }}>
             <p className="fs-1">
-            {localStorage.getItem("language") == '"ru"' &&
+            {localStorage.getItem("language") === '"ru"' &&
                       about.acf.text_descr_ru}
-                    {localStorage.getItem("language") == '"en"' &&
+                    {localStorage.getItem("language") === '"en"' &&
                       about.acf.text_descr_en}
-                    {localStorage.getItem("language") == '"kgz"' &&
+                    {localStorage.getItem("language") === '"kgz"' &&
                       about.acf.text_descr_kgz}
             </p>
           </div>

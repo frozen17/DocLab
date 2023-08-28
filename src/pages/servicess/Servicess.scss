@@ -1,0 +1,293 @@
+$hexagon-width: 250px;
+$hexagon-height: $hexagon-width*.55;
+$hexagon-margin: 25px;
+$hexagon-title-color: #30BCE2;
+$hexagon-title-color-small: #041E29;
+$hexagon-border-color: #ff4745;
+$hexagon-border-main-color: #30BCE2;
+$hexagon-border-color--hover: #ff4745;
+$hexagon-image-color: #3ea0eb;
+$hexagon-image-color-minor: #000000;
+$honeycomb-max-width: 100%;
+$viewport-thereshold: $hexagon-width + $hexagon-margin;
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.honeycomb-cell{
+  cursor: pointer;
+}
+
+.honeycomb {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  max-width: $honeycomb-max-width;
+  margin: 0 auto;
+  padding: 0;
+  transform: translateY(#{$hexagon-height/4});
+  
+  &-cell {
+    flex: 0 1 $hexagon-width;
+    max-width: $hexagon-width;
+    height: $hexagon-height;
+    margin: $hexagon-height/2.1 $hexagon-margin/2 $hexagon-margin;
+    position: relative;
+    padding: 0.5em;
+    display: flex;
+	  justify-content: center;
+    text-align: center;
+    z-index: 1;
+    --webkit-transform: translate3d(0, 0, 0);
+    
+    &-minor {
+      
+      &__title {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        hyphens: none;
+        word-break: normal;
+        text-transform: uppercase;
+        color: $hexagon-title-color;
+        font-weight: 700;
+        font-size: 10px;
+        transition: opacity 850ms;       
+
+        > main {
+          overflow: hidden;
+        }
+
+        > small {
+          font-weight: 300;
+          margin-top: 0.25em;
+          text-transform: none;
+          transition: opacity 850ms;
+          color: $hexagon-title-color-small;
+          font-size: 10px;
+          overflow: hidden;
+        }
+
+        > div {
+          font-weight: 300;
+          font-size: 10px;
+          margin-top: 0.25em;
+          text-transform: none;
+          transition: opacity 850ms;
+          color: $hexagon-title-color-small;
+          display: none;
+          overflow: hidden;
+        }
+      }
+
+      &__image {
+        object-fit: cover;
+        object-position: center;
+      }
+
+      &::before, &::after {
+        content: '';
+      }
+
+      &::before, &::after, &__image {
+        top: -50%;
+        left: 0;
+        width: 100%;
+        height: 200%;
+        display: block;
+        position: absolute;
+        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        z-index: -1;
+      }
+
+      &::before {
+        background: $hexagon-border-color;
+        transform: scale(1.04);
+      }
+
+      &::after {
+        background: $hexagon-image-color-minor;
+        opacity: 0;
+        transition: opacity 350ms;
+      }
+
+      &:hover {
+
+        .honeycomb-cell-minor__title>main {
+          display: none;
+        }
+
+        .honeycomb-cell-minor__title>small {
+          display: none;
+        }
+
+        .honeycomb-cell-minor__title>div {
+          display: inline;
+        }
+
+        &::before {
+          background: $hexagon-border-color;
+          transform: scale(1.06);
+        }
+
+        &::after {
+          opacity: 0.1;
+        }
+      }
+    }
+    
+    &-main {
+          
+      &__title {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        hyphens: none;
+        word-break: normal;
+        text-transform: uppercase;
+        color: $hexagon-title-color;
+        font-weight: 700;
+        font-size: 20px;
+        transition: opacity 850ms;       
+
+   
+        
+
+        > small {
+          font-weight: 300;
+          margin-top: 0.25em;
+          text-transform: none;
+          transition: opacity 850ms;
+          color: $hexagon-title-color-small;
+          font-size: 0.8em;
+        }
+
+        > div {
+          font-weight: 300;
+          font-size: 0.625em;
+          margin-top: 0.25em;
+          text-transform: none;
+          transition: opacity 850ms;
+          color: $hexagon-title-color-small;
+          display: none;
+        }
+      }
+
+      &__image {
+        object-fit: cover;
+        object-position: center;
+      }
+
+      &::before, &::after {
+        content: '';
+      }
+
+      &::before, &::after, &__image {
+        top: -50%;
+        left: 0;
+        width: 100%;
+        height: 200%;
+        display: block;
+        position: absolute;
+        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        z-index: -1;
+      }
+
+      &::before {
+        background: $hexagon-border-main-color;
+        transform: scale(1.04);
+      }
+
+      &::after {
+        background: $hexagon-image-color;
+        opacity: 0;
+        transition: opacity 350ms;
+      }
+
+      &:hover {
+
+        .honeycomb-cell-main__title>main {
+          display: none;
+        }
+
+        .honeycomb-cell-main__title>small {
+          display: none;
+        }
+
+        .honeycomb-cell-main__title>div {
+          display: inline;
+          font-weight: 500;
+        }
+
+        &::before {
+          background: $hexagon-border-color--hover;
+          transform: scale(1.06);
+        }
+
+        &::after {
+          opacity: 0.2;
+        }
+      }
+    }
+  }
+
+  &__placeholder{
+    display:none;
+    opacity: 0;
+    width: $hexagon-width;
+    margin: 0 $hexagon-margin/2;
+  }
+}
+
+@media (max-width:#{2*$viewport-thereshold}){
+  .honeycomb-cell {
+    margin: #{$hexagon-margin/2 + $hexagon-height/2} $hexagon-margin;
+  }
+}
+
+@media (min-width: #{2*$viewport-thereshold}) and (max-width:#{3*$viewport-thereshold}){
+  .honeycomb-cell:nth-child(3n) {
+    margin-right: calc(50% - #{$hexagon-width/2});
+    margin-left: calc(50% - #{$hexagon-width/2});
+  }
+
+  .honeycomb__placeholder:nth-child(3n + 5) {
+    display:block;
+  }
+}
+
+@media (min-width: #{3*$viewport-thereshold}) and (max-width:#{4*$viewport-thereshold}) {
+  .honeycomb-cell:nth-child(5n + 4) {
+    margin-left: calc(50% - #{$hexagon-width + $hexagon-margin});
+  }
+
+  .honeycomb-cell:nth-child(5n + 5) {
+    margin-right: calc(50% - #{$hexagon-width + $hexagon-margin});
+  }
+
+  .honeycomb__placeholder:nth-child(5n), .honeycomb__placeholder:nth-child(5n + 3) {
+    display:block;
+  }
+}
+
+@media (min-width: #{4*$viewport-thereshold}) {
+  .honeycomb-cell:nth-child(7n + 5)  {
+    margin-left: calc(50% - #{$hexagon-width*1.5 + $hexagon-margin});
+  }
+
+  .honeycomb-cell:nth-child(7n + 7), .honeycomb-cell:nth-child(7n + 5):nth-last-child(2) {
+    margin-right: calc(50% - #{$hexagon-width*1.5 + $hexagon-margin});
+  }
+
+  .honeycomb__placeholder:nth-child(7n + 7), .honeycomb__placeholder:nth-child(7n + 9), .honeycomb__placeholder:nth-child(7n + 11){
+    display:block;
+  }
+}

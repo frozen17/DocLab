@@ -1,8 +1,5 @@
 import React, { useState } from "react";
 import "./Auth.css";
-import GoogleIcon from "@mui/icons-material/Google";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/Twitter";
 import { useTranslation } from "react-i18next";
 
 import Box from "@mui/material/Box";
